@@ -27,7 +27,7 @@ async function loginUser(credentials) {
   const [password, setPassword] = useState();
   {/* Log in Submit */}
   
-const backDoor = (e) => { 
+const byPass = (e) => { 
   e.preventDefault();
   setToken({"token":"test123"});
 }
@@ -75,7 +75,7 @@ const backDoor = (e) => {
                 </ul>
                 <ul>
                 <div class="mt-4">
-                <button class="btn btn-login" type="submit" onSubmit={e => backDoor()}><b>Access</b></button>
+                <button class="btn btn-login" type="submit" onClick={byPass}><b>Access</b></button>
                 </div>
                 </ul>
                 <ul>
