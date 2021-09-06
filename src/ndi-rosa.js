@@ -675,7 +675,7 @@ export default class NDI extends Component{
                 </Form>
                 <Button class="btn" id={0} type="submit" name="btn" onClick={this.calculate}>Finalize</Button>
                 <p id="Nxtbutton1">
-                    <Button class="btn" id="btn-login" type="submit" href="/workplace"><b>Next</b></Button>
+                    <Button class="btn" id="btn-login" type="submit" href="/qtree"><b>Next</b></Button>
                 </p>
 
             </div>
