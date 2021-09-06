@@ -3,6 +3,7 @@ import {React, useState} from 'react';
 import { Component } from 'react';
 import { useHistory } from 'react-router-dom';
 import './ndi-rosa.css';
+import e from 'express';
 
 export default class NDI extends Component{
   constructor(props) {
@@ -13,6 +14,10 @@ export default class NDI extends Component{
       prev: 0,
     };
   }
+    handleClick = e =>{
+        e.preventDefault();
+        this.props.history.push('/qtree');
+    }
     calculate=(ele)=>{
       if (ele.target.name!=this.state.memory){
       this.setState(previousState => ({
@@ -675,7 +680,7 @@ export default class NDI extends Component{
                 </Form>
                 <Button class="btn" id={0} type="submit" name="btn" onClick={this.calculate}>Finalize</Button>
                 <p id="Nxtbutton1">
-                    <Button class="btn" id="btn-login" type="submit" href="/qtree"><b>Next</b></Button>
+                    <Button class="btn" id="btn-login" type="submit" onClick={this.handleClick}><b>Next</b></Button>
                 </p>
 
             </div>
