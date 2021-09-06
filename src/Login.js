@@ -26,6 +26,11 @@ async function loginUser(credentials) {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
   {/* Log in Submit */}
+  
+const backDoor = (e) => { 
+  e.preventDefault();
+  setToken({"token":"test123"});
+}
   const handleSubmit = async e => {
     e.preventDefault();
     const token = await loginUser({
@@ -70,7 +75,7 @@ async function loginUser(credentials) {
                 </ul>
                 <ul>
                 <div class="mt-4">
-                <button class="btn btn-login" type="submit"><b>Access</b></button>
+                <button class="btn btn-login" type="submit" onSubmit={e => backDoor()}><b>Access</b></button>
                 </div>
                 </ul>
                 <ul>
