@@ -171,7 +171,7 @@ function App() {
     <Route exact path='/information' component={Information} />
     <Route exact path='/stretching' component={Stretching} />
     <Route exact path='/navbar' component={Navbar} />
-    <Route exact path='/qtree' component={Display} />
+    <Route exact path='/display' component={Display} />
     <Route exact path='/recommendation' component={Recommendation} />
   
     </Switch>
