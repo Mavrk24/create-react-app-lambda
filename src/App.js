@@ -20,7 +20,6 @@ import Workplace from './workplace';
 import Information from './information';
 import Stretching from './stretching';
 import Navbar from './navbar';
-import Display from './qtree.js';
 import Display from './qtree';
 import Recommendation from './recommendation';
 
