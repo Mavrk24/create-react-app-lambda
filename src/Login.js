@@ -12,7 +12,7 @@ import LgeuHabit from './LgeuHabit.png';
 
 
 async function loginUser(credentials) {
-  return fetch('/.netlify/express/server', {
+  return fetch('/.netlify/functions/server', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
