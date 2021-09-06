@@ -10,7 +10,7 @@ app.use("/.netlify/functions/server", router) // path must route to lambda
 app.use("/", router)
 
 
-router.use('/login', (req, res) => {
+app.use('/login', (req, res) => {
     res.send({
       token: 'test123'
     });
