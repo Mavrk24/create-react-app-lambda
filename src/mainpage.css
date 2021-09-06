@@ -1,0 +1,32 @@
+#euHabitnavbar{
+    font-family: Quicksand, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#navoption{
+    color: #1c5744;
+}
+
+#signout{
+    color: #fde4e4;
+}
+  
+.color{
+    background-color: #56b495;
+}
+
+.color1{
+    background-color: #dfdfdf;
+}
+
+.d{
+    background-color: #eee9da;
+}
+
+.Logo{
+    padding: 0px;
+    margin-right: 5px;
+    margin-top: 0px;
+}

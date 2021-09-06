@@ -42,43 +42,18 @@ export default class Entry extends Component{
       console.log('form is valid: submit');
     }
   }
+
+  myFunction() {
+    var x = document.getElementById("age").value;
+    document.getElementById("demo").innerHTML = x;
+  }
+
   render() {
     return(
       <div> 
-        <h1 class="mx-5" id="demographic-data"> Demographic Data</h1>
-     {/*<form>
-        <h1 id="demographic-data"> Demographic Data</h1>
-        <div class="mt-5">
-          <label>
-              <p>อายุ</p>
-                <input type="number"/>
-              </label>
-              <p>เพศ</p>
-              <select>
-                  <option value="m">Male</option>
-                  <option value="f">Female</option>
-                  <option value="o">Others</option>
-              </select>
-              <label>
-                <p>อาขีพ</p>
-                <input type="text" />
-              </label>
-              <label>
-                <p>คณะที่กำลังศึกษา (หากเป็นนิสิต/นักศึกษา)</p>
-                <input type="text" />
-              </label>
-              <label>
-                <p>ชั้นปีที่กำลังศึกษา</p>
-                <input type="number" />
-              </label>
-              <label>
-              <p></p>
-              <button type="submit">Submit</button>
-              </label>
-        </div>  
-        </form>
-        as="textarea" rows={1}
-     */}
+        <h1 class="mx-5 pb-3" id="demographic-data"> Demographic Data <br/> 
+        <p class="mt-2" id="survey"> ข้อมูลทั่วไป </p> </h1>
+        
 
 <FormWithConstraints
         ref={form => this.form = form}
@@ -91,7 +66,7 @@ export default class Entry extends Component{
                  required onChange={this.handleChange}
                  className="form-control mb-3" />
           <FieldFeedbacks for="age">
-            <FieldFeedback when="*" class="mb-3"/>
+            <FieldFeedback  id="feedback" when="*" class="mb-3"/>
           </FieldFeedbacks>    
           </Form.Group>
               <Form.Group as={Col} className="mb-3" controlId="exampleForm.ControlTextarea1">
@@ -102,7 +77,7 @@ export default class Entry extends Component{
                     <option>ชาย</option>
                   </Form.Control>
                   <FieldFeedbacks for="sex">
-            <FieldFeedback when="*" class="mt-3 mb-3"/>
+            <FieldFeedback id="feedback" when="*" class="mt-3 mb-3"/>
           </FieldFeedbacks> 
               </Form.Group>
           </Row>
@@ -139,11 +114,8 @@ export default class Entry extends Component{
                 </Form.Text>
               </Form.Group>
 
-
-        
-
-         <p id="Nxtbutton">
-          <button class="btn" id="btn-login" type="submit" onClick={this.contactSubmit}><b>Next</b></button>
+          <p id="Nxtbutton">
+            <button class="btn" id="btn-login" type="submit" onClick={this.contactSubmit}><b>Next</b></button>
           </p>
           </ FormWithConstraints>
       </div>

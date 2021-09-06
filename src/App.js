@@ -3,8 +3,8 @@ import { Form, Button, Container, Col, Row, Modal, FormCheck } from 'react-boots
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Login from '../src/Login';
+import Register from '../src/register-login';
 import useToken from '../src/useToken';
-import Screening from '../src/Screening';
 import Main from '../src/Main'
 import {useState, setState} from 'react';
 import Result from './result';
@@ -13,6 +13,17 @@ import Entry from './entry';
 import {useHistory} from 'react-router-dom'
 import NDI from './ndi-rosa';
 import ROSA from './rosa';
+import Mainpage from './mainpage';
+import Profile from './userprofile';
+import Intervention from './intervention';
+import Workplace from './workplace';
+import Information from './information';
+import Stretching from './stretching';
+import Navbar from './navbar';
+import Display from './qtree';
+import Recommendation from './recommendation';
+
+
 
 function Application() {
   const [show, setShow] = useState(false);
@@ -125,17 +136,17 @@ function Application() {
           
       );
     }
-    
-    
-
-
 
 function App() {
   const { token, setToken } = useToken();
-
-  if(!token) {
+  if (!token) {
     return <Login setToken={setToken} />
   }
+  else if (token == "register") { 
+    return <Register /> 
+  }   
+  
+
   return(
     <BrowserRouter>
     <Switch>
@@ -145,11 +156,26 @@ function App() {
     <Route path="/main">
       <Main />
     </Route>
+    <Route path="/register">
+      <Register />
+    </Route>
+
     <Route exact path='/entry' component={Entry} />
-    <Route exact path='/result' component={Result} />
     <Route exact path='/ndi' component={NDI} />
     <Route exact path='/rosa' component={ROSA} />
+    <Route exact path='/result' component={Result} />
+    <Route exact path='/mainpage' component={Mainpage} />
+    <Route exact path='/userprofile' component={Profile} />
+    <Route exact path='/intervention' component={Intervention} />
+    <Route exact path='/workplace' component={Workplace} />
+    <Route exact path='/information' component={Information} />
+    <Route exact path='/stretching' component={Stretching} />
+    <Route exact path='/navbar' component={Navbar} />
+    <Route exact path='/qtree' component={Display} />
+    <Route exact path='/recommendation' component={Recommendation} />
+  
     </Switch>
+
   </BrowserRouter>
   )
 }

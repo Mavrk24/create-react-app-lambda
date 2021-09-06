@@ -1,0 +1,47 @@
+
+
+#survey{
+    font-family: "Bai Jamjuree", Verdana, sans-serif;
+    margin-bottom: 0px;
+}
+
+
+
+
+#instruction{
+    text-align: center;
+    font-size: 13px;
+    color: aliceblue;
+    border-style: solid;
+    letter-spacing: 80%;
+    
+}
+
+#screening-form{
+    padding: 20px;
+    font-size: 14px;
+    letter-spacing: 80%;
+}
+
+#qtitle{
+    font-size: 14px;
+}
+
+#question{
+    font-size: 14px;
+    /*background-color: rgba(248, 215, 28, 0.952);*/
+}
+
+#photo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#Nxtbutton2{
+    align-items: center;
+    position: relative;
+    top: 2%;
+    text-align: center;
+}

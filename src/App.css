@@ -55,15 +55,16 @@
 .wrapper{
   font-family: Quicksand, Verdana, sans-serif;
   font-style: normal;
-  color: #F9F2DF;
+  color: #000000;
   font-size: 16px;
+  background-color: #f2efe4;
 }
 
 .welcome{
   font-family:  Bai Jamjuree, Verdana, sans-serif;
   font-style: normal;
   text-align: center;
-  padding:40px;
+  padding: 40px;
   font-size: 16px;
 }
 
@@ -95,12 +96,15 @@
 }
 
 #euHabit{
-  font-family: Mermaid;
+  font-family: Quicksand, Verdana, sans-serif;
   font-size: 48px;
+  font-weight: bold;
+  color: #1c5744; 
 }
-body {
-  color: #ffffff;
-  background-color: #000000;
+
+.body {
+  color: #8d3d3d;
+  background-color: #eeb7b7;
   
   }
 
@@ -111,8 +115,12 @@ body {
 }
 
 #btn-login{
-  background-color: #F9F2DF;
-  color: #010A09;
+  background-color: #34a580;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  border: none;
 }
 
 #risk{
@@ -121,4 +129,11 @@ body {
 
 #no-risk{
   color:aquamarine;
+}
+
+#Nxtbutton{
+  align-items: center;
+  position: relative;
+  top: 2%;
+  text-align: center;
 }

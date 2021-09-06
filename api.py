@@ -28,11 +28,17 @@ def api():
 @app.route("/subentry" , methods=['POST'])
 def sub():
     entry = request.get_json()
+
+=======
     session["entry"]=entry
+
     return entry 
 
 @app.route("/request")
 def getreq():
+
+    return {'r_key': [0,0,0,0,0] }
+=======
     key = [1,[1,0,1,0,1],[1,0,1,0,1],[1,0,1,0,1],0] #sample_data
     return {'r_key': key }
 

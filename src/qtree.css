@@ -1,0 +1,82 @@
+#instruction1{
+    text-align: center;
+    font-size: 12px;
+    color: #1c5744;
+    border-style: solid;
+    letter-spacing: 80%;
+}
+
+/*questionnaire*/
+.question_title{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    font-family: Quicksand, Verdana, sans-serif;
+}
+
+#q{
+    font-size: 16px;
+    color: #1c5744;
+}
+
+.question_1{
+    text-align: right;
+    width: 50%;
+    padding-right: 10%
+   
+}
+
+.question_2{
+    text-align: left;
+    width: 50%;
+    padding-right: 10%
+}
+
+#Nxtbutton2{
+    align-items: center;
+    position: relative;
+    top: 2%;
+    text-align: center;
+}
+
+/*yes-no buttoon*/
+#yesbutton{
+    width: 60px;
+    background-color: #34a580;
+    color: #ffffff;
+    border: none;
+    justify-items: center;
+    margin-right: 0px;
+    font-family: Quicksand, Verdana, sans-serif;
+}
+
+#nobutton{
+    width: 60px;
+    background-color: #fc5241;
+    color: #ffffff;
+    border: none;
+    justify-items: center;
+    margin-left: 0px;
+    font-family: Quicksand, Verdana, sans-serif;
+}
+
+.left_side{
+    text-align: right;
+}
+
+.right_side{
+    text-align: left;
+}
+
+#btn-finish{
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background-color: #f3921c;
+    border: none;
+    font-family: Quicksand, Verdana, sans-serif;
+}
+
+
+
