@@ -36,12 +36,15 @@ export default class Display extends Component{
           axios({
             url: 'https://euhabit-api.herokuapp.com/subentry',
             method: 'post',
-            data: payload
+            data: payload,
+            headers: {"Access-Control-Allow-Origin": "*"}
           });
           this.resolve();
        }
        resolve = () =>{
-        axios.get("https://euhabit-api.herokuapp.com/intervention")
+        axios.get("https://euhabit-api.herokuapp.com/intervention", {
+          headers: {"Access-Control-Allow-Origin": "*"}
+        })
       .then(response => {
         console.log(response.data);
         const num = response.data.text[0][1];
