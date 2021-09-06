@@ -63,7 +63,9 @@ export default class Display extends Component{
 
 
       request = () =>{
-        axios.get("https://euhabit-api.herokuapp.com/display")
+        axios.get("https://euhabit-api.herokuapp.com/display", {
+          headers: {"Access-Control-Allow-Origin": "*"}
+        })
       .then(response => {
         console.log(response.data);
         const text = response.data.text;
