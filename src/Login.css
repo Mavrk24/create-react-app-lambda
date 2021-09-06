@@ -1,6 +1,14 @@
+body {
+    background: #f2efe4;
+    /*color: #F9F2DF;*/
+    color: #000000;
+    font-family: "Bai Jamjuree", Verdana, sans-serif;
+    
+}
+
 .login{
-    background: linear-gradient(180deg, #010A09 0%, #010A09 100%);
-    color: #f0e2be; 
+    background-color: #f2efe4;
+    color: #173e1e; 
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -15,20 +23,13 @@
     padding-bottom: 60px;
 }
 
-body {
-    background: linear-gradient(180deg, #010A09 0%, #010A09 100%);
-    color: #F9F2DF;
-}
-
-
-
 .title{
-    font-family: Mermaid;
+    font-family: Quicksand, Verdana, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 48px;
     line-height: 48px;
-    color: #F9F2DF;
+    color: #1d3124; 
     position: relative;
     left: 71px;
     top: 65px;
@@ -49,9 +50,8 @@ body {
     position: relative;
     top: 65px;
     font-family: Quicksand, Verdana, sans-serif;
-    color: #F9F2DF;
+    color: #1d3124;
     font-size: 15px;
-    font-style: normal;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -59,34 +59,64 @@ body {
 
 .username{
     text-align: left;
-    margin-top: 70px;
+    /*margin-top: 70px;*/
+    margin-top: 0px;
     margin-right: 50px;
-    margin-left: 50px;
-    padding-left: 0px;
+    margin-left: 10px;
+    padding-left: 2px;
     padding-top: 20px;
+    font-weight: bold;
 }
 
 
 /* Hello, MNT Meditech*/
 .logo{
-
-text-align: right;
-font-family: Quicksand, Verdana, sans-serif;
-font-style: normal;
-font-weight: bold;
-font-size: 13px;
-line-height: 13px;
-color: #F9F2DF;
-position: relative;
-right: 22px;
+    text-align: right;
+    font-family: Quicksand, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 13px;
+    color: #173e1e;
+    position: relative;
+    right: 22px;
 
 }
 
 .btn-login{
-    background-color: #F9F2DF;
-    color: #010A09;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background-color: #34a580;
+    font-family: Quicksand, Verdana, sans-serif;
+
+   /* background: linear-gradient(to right, #fdd360, #faeecc ); */ /*ปุ่ม access สีเหลือง*/
 }
 
+.LgeuHabit{
+    max-width: 100%;
+    min-width: 15rem;
+    height: auto;
+    margin-bottom: 0px;
+    margin-top: 50px;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+@media (max-width: 600px) {
+    .LgeuHabit{
+        max-width: 15rem;
+        justify-content: center;
+        height: auto;
+        margin-bottom: 0px;
+        margin-top: 50px;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    
+}
 #submit_btn{
     text-align: center;
 }
+
