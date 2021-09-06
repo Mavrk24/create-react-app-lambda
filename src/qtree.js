@@ -34,14 +34,14 @@ export default class Display extends Component{
           };
           console.log(payload)
           axios({
-            url: 'https://warm-taiga-91978.herokuapp.com/subentry',
+            url: 'https://euhabit-api.herokuapp.com/subentry',
             method: 'post',
             data: payload
           });
           this.resolve();
        }
        resolve = () =>{
-        axios.get("https://warm-taiga-91978.herokuapp.com/intervention")
+        axios.get("https://euhabit-api.herokuapp.com/intervention")
       .then(response => {
         console.log(response.data);
         const num = response.data.text[0][1];
@@ -63,7 +63,7 @@ export default class Display extends Component{
 
 
       request = () =>{
-        axios.get("https://warm-taiga-91978.herokuapp.com/display")
+        axios.get("https://euhabit-api.herokuapp.com/display")
       .then(response => {
         console.log(response.data);
         const text = response.data.text;
