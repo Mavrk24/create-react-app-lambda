@@ -20,9 +20,9 @@ import Workplace from './workplace';
 import Information from './information';
 import Stretching from './stretching';
 import Navbar from './navbar';
+import Display from './qtree.js';
 import Display from './qtree';
 import Recommendation from './recommendation';
-
 
 
 function Application() {
@@ -136,7 +136,6 @@ function Application() {
           
       );
     }
-
 function App() {
   const { token, setToken } = useToken();
   if (!token) {
@@ -146,7 +145,6 @@ function App() {
     return <Register /> 
   }   
   
-
   return(
     <BrowserRouter>
     <Switch>
@@ -159,7 +157,6 @@ function App() {
     <Route path="/register">
       <Register />
     </Route>
-
     <Route exact path='/entry' component={Entry} />
     <Route exact path='/ndi' component={NDI} />
     <Route exact path='/rosa' component={ROSA} />
@@ -175,7 +172,7 @@ function App() {
     <Route exact path='/recommendation' component={Recommendation} />
   
     </Switch>
-
   </BrowserRouter>
   )
 }
+export default App;
