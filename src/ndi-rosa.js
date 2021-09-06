@@ -3,6 +3,7 @@ import {React, useState} from 'react';
 import { Component } from 'react';
 import { useHistory } from 'react-router-dom';
 import './ndi-rosa.css';
+import e from 'express';
 
 export default class NDI extends Component{
   constructor(props) {
@@ -13,6 +14,10 @@ export default class NDI extends Component{
       prev: 0,
     };
   }
+    handleClick = e =>{
+        e.preventDefault();
+        this.props.history.push('/qtree');
+    }
     calculate=(ele)=>{
       if (ele.target.name!=this.state.memory){
       this.setState(previousState => ({
@@ -41,7 +46,7 @@ export default class NDI extends Component{
     render() {
         return(
             <div> 
-                <h1 class="mx-5 pb-3" id="demographic-data1"> Neck Disability Index (NDI) </h1>
+                <h1 class="mx-5 pb-3" id="demographic-data"> Neck Disability Index (NDI) </h1>
                 <p class="mx-5 p-3" id="instruction1"> 
                     แบบสอบถามนี้ทำขึ้นเพื่อรับข้อมูลว่าอาการปวดคอมีผลต่อการใช้ชีวิตประจำวันของท่านอย่างไร
                     กรุณาทำเครื่องหมายลงในช่องเพียงหนึ่งช่อง
@@ -50,7 +55,7 @@ export default class NDI extends Component{
 
 {/* คำถาม NDI */}      
 
-                <Form className="px-5" id="screening-form1">
+                <Form className="px-5" class="screening-form1">
 {/*Q1*/}            <Form.Group className="mb-3 px-4">
                         <Form.Label id="question1"> 1. ความเจ็บปวด </Form.Label>
                         {['radio'].map((type) => (
@@ -646,7 +651,7 @@ export default class NDI extends Component{
                                 <Form.Check
                                     type={type}
                                     id={3}
-                                    name="ndi"
+                                    name="ndi10"
                                     label="ฉันสามารถเข้าร่วมกิจกรรมนันทนาการของฉันได้บ้างเพราะปวดคอ"
                                     onClick={this.calculate}
                                 />
@@ -673,8 +678,9 @@ export default class NDI extends Component{
                         ))}
                     </Form.Group>                
                 </Form>
+                <Button class="btn" id={0} type="submit" name="btn" onClick={this.calculate}>Finalize</Button>
                 <p id="Nxtbutton1">
-                    <Button class="btn" id={0} type="submit" onClick={this.calculate} href="/rosa"><b>Next</b></Button>
+                    <Button class="btn" id="btn-login" type="submit" onClick={this.handleClick}><b>Next</b></Button>
                 </p>
 
             </div>
