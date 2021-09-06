@@ -4,6 +4,9 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 
+app.use(bodyParser.json());
+app.use('/.netlify/functions/server', router);  // path must route to lambda
+app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../Login.js')));
 app.use(bodyParser);
 app.post('/login',, (req, res) => {
   res.send({
