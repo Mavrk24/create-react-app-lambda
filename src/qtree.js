@@ -33,19 +33,13 @@ postrequest = () =>{
       payload: this.state.arr
     };
     console.log(JSON.stringify(payload))
-    axios.post("https://euhabit-api.herokuapp.com/subentry", JSON.stringify(payload), {
+    axios.post("https://euhabit-api.herokuapp.com/intervention", JSON.stringify(payload), {
       headers: {
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin": "*"
       }
   }
-  ).then(response => {
-    console.log(response);
-  });
-    this.resolve();
- }
-       resolve = () =>{
-        axios.get("/intervention")
+  )
       .then(response => {
         console.log(response.data);
         const num = response.data.text[0][1];
@@ -60,15 +54,15 @@ postrequest = () =>{
         }
         let payload = {
             payload: text
-        };
-        axios({
-            url: '/target here', /*ส่งตรงนี้ :D*/
-            method: 'post',
-            data: payload
-          });
-        console.log(payload)
-      });
-      };
+        };axios({
+          url: '/target here', /*ส่งตรงนี้ :D*/
+          method: 'post',
+          data: payload
+        });
+      console.log(payload)
+    });
+    };
+  
 
       onRequest = () =>{
         var text = this.state.text;
