@@ -56,7 +56,7 @@ export default class Recommendation extends Component{
             console.log(num)
             console.log(arr)
             console.log(String(value))
-            document.getElementById('2').hidden = false;
+            document.getElementById(1).hidden = false;
         }
         if (target=='shoulder'){
             const arr = [5,6,10]
@@ -81,43 +81,43 @@ export default class Recommendation extends Component{
                 {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id='1' type="video/mp4" src={stretching_1} hidden="hidden"></video>
+                    ref="vidRef2" id={1} type="video/mp4" src={stretching_1} hidden="hidden"></video>
                 </div>
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id="2" type="video/mp4" src={stretching_2} hidden="hidden"></video>
+                    ref="vidRef2" id={2} type="video/mp4" src={stretching_2} hidden="hidden"></video>
                 </div>
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id='3' type="video/mp4" src={stretching_3} hidden="hidden"></video>
+                    ref="vidRef2" id={3} type="video/mp4" src={stretching_3} hidden="hidden"></video>
                 </div>
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id='4' type="video/mp4" src={stretching_4} hidden="hidden"></video>
+                    ref="vidRef2" id={4} type="video/mp4" src={stretching_4} hidden="hidden"></video>
                 </div>
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id='5' type="video/mp4" src={stretching_5} hidden="hidden"></video>
+                    ref="vidRef2" id={5} type="video/mp4" src={stretching_5} hidden="hidden"></video>
                 </div>
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id='6' type="video/mp4" src={stretching_6} hidden="hidden"></video>
+                    ref="vidRef2" id={6} type="video/mp4" src={stretching_6} hidden="hidden"></video>
                 </div>
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id='7' type="video/mp4" src={stretching_7} hidden="hidden"></video>
+                    ref="vidRef2" id={7} type="video/mp4" src={stretching_7} hidden="hidden"></video>
                 </div>
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id='8' type="video/mp4" src={stretching_8} hidden="hidden"></video>
+                    ref="vidRef2" id={8} type="video/mp4" src={stretching_8} hidden="hidden"></video>
                 </div>
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id='9' type="video/mp4" src={stretching_9} hidden="hidden"></video>
+                    ref="vidRef2" id={9} type="video/mp4" src={stretching_9} hidden="hidden"></video>
                 </div>
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id='10' type="video/mp4" src={stretching_10} hidden="hidden"></video>
+                    ref="vidRef2" id={10} type="video/mp4" src={stretching_10} hidden="hidden"></video>
                 </div>
 
 
