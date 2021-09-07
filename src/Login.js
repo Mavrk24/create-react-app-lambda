@@ -16,8 +16,9 @@ async function loginUser(credentials) {
     method: 'POST',
     headers: {
       "Access-Control-Allow-Origin": "*"
-    },
-    body: JSON.stringify({a: 1, b: 2})
+    }, 
+    body: JSON.stringify(credentials),
+    mode: 'cors'
   })
     .then(data => data.json())
  }
