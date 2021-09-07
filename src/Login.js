@@ -12,7 +12,7 @@ import LgeuHabit from './LgeuHabit.png';
 
 
 async function loginUser(credentials) {
-  return fetch('https://thawing-gorge-25890.herokuapp.com/login', {
+  return fetch('https://euhabit-server.herokuapp.com/login', {
     method: 'POST',
     headers: {
       "Access-Control-Allow-Origin": "*"
