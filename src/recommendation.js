@@ -50,7 +50,7 @@ export default class Recommendation extends Component{
     getTarget = () => {
         var target = localStorage.getItem("target")
         if (target=='neck'){
-            var num = Math.floor(this.state.randnum*6) //สุ่มเลขตั้งแต่สร้างState
+            var num = Math.floor(this.state.randnum*5) //สุ่มเลขตั้งแต่สร้างState
             const arr = [1,2,4,7,9]
             var value = arr[num]
             console.log(num)
@@ -85,7 +85,7 @@ export default class Recommendation extends Component{
                 </div>
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id='2' type="video/mp4" src={stretching_2} hidden="hidden"></video>
+                    ref="vidRef2" id="2" type="video/mp4" src={stretching_2} hidden="hidden"></video>
                 </div>
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
