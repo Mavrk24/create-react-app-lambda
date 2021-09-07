@@ -23,7 +23,8 @@ export default class Recommendation extends Component{
         target:''}
     };
     getTarget = () =>{
-        var target = localStorage.getItem('target')
+        var target = localStorage.getItem('target');
+        console.log(target);
         if (target=='neck'){
             var num = Math.floor(Math.random()*6)
             const arr = [1,2,4,7,9]
