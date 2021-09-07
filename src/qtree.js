@@ -34,17 +34,14 @@ export default class Display extends Component{
           };
           console.log(payload)
           axios({
-            url: 'https://euhabit-api.herokuapp.com/subentry',
+            url: '/subentry',
             method: 'post',
-            data: payload,
-            headers: {"Access-Control-Allow-Origin": "*"}
+            data: payload
           });
           this.resolve();
        }
        resolve = () =>{
-        axios.get("https://euhabit-api.herokuapp.com/intervention", {
-          headers: {"Access-Control-Allow-Origin": "*"}
-        })
+        axios.get("/intervention")
       .then(response => {
         console.log(response.data);
         const num = response.data.text[0][1];
@@ -60,10 +57,14 @@ export default class Display extends Component{
         let payload = {
             payload: text
         };
+        axios({
+            url: '/target here', /*ส่งตรงนี้ :D*/
+            method: 'post',
+            data: payload
+          });
         console.log(payload)
       });
       };
-
 
       request = () =>{
         axios.get("https://euhabit-api.herokuapp.com/display", {
