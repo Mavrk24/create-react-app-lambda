@@ -12,11 +12,12 @@ import LgeuHabit from './LgeuHabit.png';
 
 
 async function loginUser(credentials) {
-  return fetch('https://euhabit-server.herokuapp.com/api/users/login', {
-    method: 'GET',
+  return fetch('https://euhabit-server.herokuapp.com/api/users/test', {
+    method: 'POST',
     headers: {
       "Access-Control-Allow-Origin": "*"
-    }
+    },
+    body: JSON.stringify(credentials)
   })
     .then(data => data.json())
  }
