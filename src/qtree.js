@@ -29,18 +29,18 @@ export default class Display extends Component{
         };
         
 
-       postrequest = () =>{
-        let payload = {
-            payload: this.state.arr
-          };
-          console.log(payload)
-          axios({
-            url: '"https://euhabit-api.herokuapp.com/subentry"',
-            method: 'post',
-            data: JSON.stringify(payload)
-          });
-          this.resolve();
-       }
+    postrequest = () =>{
+  let payload = {
+      payload: this.state.arr
+    };
+    console.log(payload)
+    axios({
+      url: '"https://euhabit-api.herokuapp.com/subentry"',
+      method: 'post',
+      data: JSON.stringify(payload)
+    });
+    this.resolve();
+ }
        resolve = () =>{
         axios.get("/intervention")
       .then(response => {
