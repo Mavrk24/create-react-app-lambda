@@ -75,7 +75,7 @@ const byPass = (e) => {
                 </ul>
                 <ul>
                 <div class="mt-4">
-                <button class="btn btn-login" type="submit" onClick={loginUser}><b>Access</b></button>
+                <button class="btn btn-login" type="submit"><b>Access</b></button>
                 </div>
                 </ul>
                 <ul>
