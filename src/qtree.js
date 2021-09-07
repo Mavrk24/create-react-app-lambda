@@ -23,7 +23,8 @@ export default class Display extends Component{
         msg:'',
         iter: 1,
         arr: [],
-        type: ''
+        type: '',
+        text: '',
         }
         };
         
@@ -67,7 +68,8 @@ export default class Display extends Component{
       };
 
       onRequest = () =>{
-        var msg = this.state.msg
+        var msg = this.state.msg;
+        var text = this.state.text;
         if (msg == ''){
           this.request();
         }
@@ -85,7 +87,7 @@ export default class Display extends Component{
         })
       .then(response => {
         console.log(response.data);
-        const text = response.data.text;
+        this.setState({ text: response.data.text});
         this.setState({ msg: text[this.state.iter]});
         this.setState(previousState => ({
                 iter: parseInt(previousState.iter) +1 
