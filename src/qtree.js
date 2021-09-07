@@ -66,6 +66,19 @@ export default class Display extends Component{
       });
       };
 
+      onRequest = () =>{
+        var msg = this.state.msg
+        if (msg == ''){
+          this.request();
+        }
+        else{
+          this.setState({ msg: text[this.state.iter]});
+        this.setState(previousState => ({
+                iter: parseInt(previousState.iter) +1 
+                }));
+        }
+      }
+
       request = () =>{
         axios.get("https://euhabit-api.herokuapp.com/display", {
           headers: {"Access-Control-Allow-Origin": "*"}
@@ -85,7 +98,7 @@ export default class Display extends Component{
         this.setState({
             arr: this.state.arr.concat(1)
           });
-        this.request();
+        this.onRequest();
         console.log(this.state.arr);
         if (array.length >= 25){
             document.getElementById("save").hidden = false;
@@ -98,7 +111,7 @@ export default class Display extends Component{
         this.setState({
             arr: this.state.arr.concat(0)
           });
-        this.request();
+        this.onRequest();
         console.log(this.state.arr);
         }
         if (array.length >= 25){
@@ -108,7 +121,7 @@ export default class Display extends Component{
 
     render() {
         return(
-        <div onLoad={this.request.bind(this)}>   
+        <div onLoad={this.onRequest.bind(this)}>   
             <h1 class="mx-5 pb-3" id="demographic-data">
               Workplace condition <br/>
               <p class="mt-2" id="survey"> แบบประเมินสภาพแวดล้อมในการนั่งทำงาน </p>
