@@ -35,9 +35,9 @@ export default class Display extends Component{
           };
           console.log(payload)
           axios({
-            url: '/subentry',
+            url: '"https://euhabit-api.herokuapp.com/subentry"',
             method: 'post',
-            data: payload
+            data: JSON.stringify(payload)
           });
           this.resolve();
        }
