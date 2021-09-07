@@ -8,10 +8,11 @@ import image from './image.png';
 import LgeuHabit from './LgeuHabit.png';
 
 async function loginUser(credentials) {
-  return fetch('https://euhabit-server.herokuapp.com/api/users/register', {
+  return fetch('https://euhabit-server.herokuapp.com/api/users/test', {
     method: 'POST',
     headers: {
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "*",
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(credentials)
   })
