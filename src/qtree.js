@@ -32,7 +32,7 @@ postrequest = () =>{
   let payload = {
       payload: this.state.arr
     };
-    console.log(payload)
+    console.log(JSON.stringify(payload))
     axios.post("https://euhabit-api.herokuapp.com/subentry", JSON.stringify(payload), {
       headers: {
           'Content-Type': 'application/json',
