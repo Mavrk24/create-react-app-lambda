@@ -24,7 +24,7 @@ export default class Display extends Component{
         iter: 1,
         arr: [],
         type: '',
-        text: '',
+        text: []
         }
         };
         
@@ -68,9 +68,8 @@ export default class Display extends Component{
       };
 
       onRequest = () =>{
-        var msg = this.state.msg;
         var text = this.state.text;
-        if (msg == ''){
+        if (text == []){
           this.request();
         }
         else{
@@ -94,6 +93,7 @@ export default class Display extends Component{
                 }));
       });
       };
+      
       onYes = () =>{
         var array = this.state.arr
         if (array.length < 26){
