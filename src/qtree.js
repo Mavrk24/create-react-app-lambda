@@ -27,7 +27,11 @@ export default class Display extends Component{
         text: []
         }
         };
-        
+getRec = (e) => {
+        e.preventDefault();
+        this.props.history.push('/qtree');
+        console.log('form is valid: submit');
+    }        
 postrequest = () =>{
   let payload = {
       payload: this.state.arr
@@ -56,6 +60,7 @@ postrequest = () =>{
             payload: text
         };
       localStorage.setItem('target', text);
+       this.getRec();
     });
     };
   
