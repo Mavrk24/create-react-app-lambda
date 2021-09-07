@@ -28,7 +28,6 @@ export default class Display extends Component{
         }
         };
 getRec = () => {
-        e.preventDefault();
         this.props.history.push('/recommendation');
         console.log('form is valid: submit');
     }        
