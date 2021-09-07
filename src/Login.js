@@ -12,10 +12,10 @@ import LgeuHabit from './LgeuHabit.png';
 
 
 async function loginUser(credentials) {
-  return fetch('/.netlify/functions/server', {
+  return fetch('https://thawing-gorge-25890.herokuapp.com/login', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      "Access-Control-Allow-Origin": "*"
     },
     body: JSON.stringify(credentials)
   })
@@ -75,7 +75,7 @@ const byPass = (e) => {
                 </ul>
                 <ul>
                 <div class="mt-4">
-                <button class="btn btn-login" type="submit" onClick={byPass}><b>Access</b></button>
+                <button class="btn btn-login" type="submit" onClick={loginUser}><b>Access</b></button>
                 </div>
                 </ul>
                 <ul>
