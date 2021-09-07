@@ -53,6 +53,9 @@ export default class Recommendation extends Component{
             var num = Math.floor(this.state.randnum*6) //สุ่มเลขตั้งแต่สร้างState
             const arr = [1,2,4,7,9]
             var value = arr[num]
+            console.log(num)
+            console.log(arr)
+            console.log(String(value))
             document.getElementById(String(value)).hidden = false;
         }
         if (target=='shoulder'){
