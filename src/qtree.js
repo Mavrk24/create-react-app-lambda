@@ -55,7 +55,7 @@ postrequest = () =>{
         let payload = {
             payload: text
         };
-      console.log(payload)
+      localStorage.setItem('target', text);
     });
     };
   
