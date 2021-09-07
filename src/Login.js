@@ -17,7 +17,7 @@ async function loginUser(credentials) {
     headers: {
       "Access-Control-Allow-Origin": "*"
     },
-    body: JSON.stringify(credentials)
+    body: 'test'
   })
     .then(data => data.json())
  }
