@@ -36,6 +36,7 @@ const byPass = (e) => {
   const handleSubmit = async e => {
     e.preventDefault();
     const token = await loginUser({
+      email,
       username,
       password
     });
