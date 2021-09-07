@@ -48,7 +48,7 @@ export default class Recommendation extends Component{
     }
         
     getTarget = () => {
-        const target = localStorage.getItem('target');
+        var target = localStorage.getItem('target');
         console.log(target, randnum);
         if (target=='neck'){
             var num = Math.floor(this.state.randnum*6) //สุ่มเลขตั้งแต่สร้างState
