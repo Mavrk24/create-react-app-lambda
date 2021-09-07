@@ -22,6 +22,7 @@ async function loginUser(credentials) {
     mode: 'cors'
   })
     .then(data => data.json())
+  .then(res => res.json())
  }
   export default function Login({setToken,history}) {
   const [email, setEmail] = useState();
