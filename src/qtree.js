@@ -54,11 +54,7 @@ postrequest = () =>{
         }
         let payload = {
             payload: text
-        };axios({
-          url: '/target here', /*ส่งตรงนี้ :D*/
-          method: 'post',
-          data: payload
-        });
+        };
       console.log(payload)
     });
     };
