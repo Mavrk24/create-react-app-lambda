@@ -13,7 +13,7 @@ import LgeuHabit from './LgeuHabit.png';
 
 async function loginUser(credentials) {
   return fetch('https://euhabit-server.herokuapp.com/api/users/login', {
-    method: 'POST',
+    method: 'GET',
     headers: {
       "Access-Control-Allow-Origin": "*"
     },
