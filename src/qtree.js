@@ -29,7 +29,7 @@ export default class Display extends Component{
         };
 getRec = (e) => {
         e.preventDefault();
-        this.props.history.push('/qtree');
+        this.props.history.push('/recommendation');
         console.log('form is valid: submit');
     }        
 postrequest = () =>{
