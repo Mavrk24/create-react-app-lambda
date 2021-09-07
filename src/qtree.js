@@ -39,7 +39,9 @@ postrequest = () =>{
           "Access-Control-Allow-Origin": "*"
       }
   }
-  )
+  ).then(response => {
+    console.log(response);
+  });
     this.resolve();
  }
        resolve = () =>{
