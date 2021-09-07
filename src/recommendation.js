@@ -28,6 +28,7 @@ export default class Recommendation extends Component{
     // fetch recommendation มาใส่ t=state.target
     componentDidMount = () => {
         this.renderProfile();
+        this.getTarget();
     }
 
     renderProfile(){
@@ -53,25 +54,22 @@ export default class Recommendation extends Component{
             var num = Math.floor(this.state.randnum*5) //สุ่มเลขตั้งแต่สร้างState
             const arr = [1,2,4,7,9]
             var value = arr[num]
-            console.log(num)
-            console.log(arr)
-            console.log(String(value))
-            document.getElementById(1).hidden = false;
+            document.getElementById(value).hidden = false;
         }
         if (target=='shoulder'){
             const arr = [5,6,10]
             var num = Math.floor(this.state.randnum*3) //สุ่มเลขตั้งแต่สร้างState
             var value = arr[num]
-            document.getElementById(String(value)).hidden = false;
+            document.getElementById(value).hidden = false;
         }
     }
 
     render(){
-        this.getTarget()
+       
         return(
             <div>
 
-                <h1 class="mx-5 pb-3" id="demographic-data">
+                <h1 class="mx-5 pb-3" id="demographic-data" >
                     Result and Recommendation <br/>
                     <p class="mt-2" id="survey"> ผลการประเมินสภาพแวดล้อมในการนั่งทำงาน </p>
                 </h1>
