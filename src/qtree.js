@@ -27,7 +27,7 @@ export default class Display extends Component{
         text: []
         }
         };
-getRec = (e) => {
+getRec = () => {
         e.preventDefault();
         this.props.history.push('/recommendation');
         console.log('form is valid: submit');
