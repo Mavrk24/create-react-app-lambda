@@ -86,6 +86,7 @@ export default class Display extends Component{
         })
       .then(response => {
         console.log(response.data);
+        var text = response.data.text;
         this.setState({ text: response.data.text});
         this.setState({ msg: text[this.state.iter]});
         this.setState(previousState => ({
@@ -93,7 +94,7 @@ export default class Display extends Component{
                 }));
       });
       };
-      
+
       onYes = () =>{
         var array = this.state.arr
         if (array.length < 26){
