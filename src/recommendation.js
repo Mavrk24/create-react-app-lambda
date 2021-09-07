@@ -56,7 +56,7 @@ export default class Recommendation extends Component{
             console.log(num)
             console.log(arr)
             console.log(String(value))
-            document.getElementById(2).hidden = false;
+            document.getElementById('2').hidden = false;
         }
         if (target=='shoulder'){
             const arr = [5,6,10]
