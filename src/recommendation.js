@@ -16,40 +16,66 @@ import stretching_9 from './stretching_9.mp4';
 import stretching_10 from './stretching_10.mp4';
 
 export default class Recommendation extends Component{
-    /*fetch here*/
+
     constructor(props) {
         super(props);
         this.state = {
-        target:''}
+            target:'',
+            randnum: Math.random() //แก้เอาสุ่มเลขมาไว้ตรงนี้
+        }
     };
-    getTarget = () =>{
-        var target = localStorage.getItem('target');
-        console.log(target);
+
+    // fetch recommendation มาใส่ t=state.target
+    componentDidMount = () => {
+        this.renderProfile();
+    }
+
+    renderProfile(){
+        fetch('http://localhost:8080/api/users/get_UserData', {
+            method: 'GET',
+            headers: {
+                token: localStorage.getItem("token"),
+                'Content-Type': 'application/json'
+            }
+            })
+        .then(res => res.json())
+        .then(res => {
+            this.setState({ 
+                target: res.recommendation
+            })
+        })
+        .catch((err) => console.error(err))  
+    }
+        
+    getTarget = () => {
+        const target = localStorage.getItem('target');
         if (target=='neck'){
-            var num = Math.floor(Math.random()*6)
+            var num = Math.floor(this.state.randnum*6) //สุ่มเลขตั้งแต่สร้างState
             const arr = [1,2,4,7,9]
             var value = arr[num]
             document.getElementById(value).hidden = false;
         }
         if (target=='shoulder'){
             const arr = [5,6,10]
-            var num = Math.floor(Math.random()*3)
+            var num = Math.floor(this.state.randnum*3) //สุ่มเลขตั้งแต่สร้างState
             var value = arr[num]
             document.getElementById(value).hidden = false;
         }
     }
-    render() {
+
+    render(){
+        this.getTarget()
         return(
             <div>
 
-            <h1 class="mx-5 pb-3" id="demographic-data">
-              Result and Recommendation <br/>
-              <p class="mt-2" id="survey"> ผลการประเมินสภาพแวดล้อมในการนั่งทำงาน </p>
-            </h1>
+                <h1 class="mx-5 pb-3" id="demographic-data">
+                    Result and Recommendation <br/>
+                    <p class="mt-2" id="survey"> ผลการประเมินสภาพแวดล้อมในการนั่งทำงาน </p>
+                </h1>
 
 
 
-{/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
+                {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
                 <div class="embed-responsive embed-responsive-16by9 video_size">
                     <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
                     ref="vidRef2" id={1} type="video/mp4" src={stretching_1} hidden="hidden"></video>
@@ -97,6 +123,6 @@ export default class Recommendation extends Component{
             </div>
 
         )
-    }
+    };
 }
     
