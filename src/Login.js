@@ -94,7 +94,6 @@ const byPass = (e) => {
   )
 }
 Login.propTypes = {
-  setToken: token
 
 }
 
