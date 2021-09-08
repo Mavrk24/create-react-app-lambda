@@ -22,7 +22,6 @@ async function loginUser(credentials) {
     mode: 'cors'
   })
     .then(data => data.json())
-  .then(res => res.json())
  }
   export default function Login({setToken,history}) {
   const [email, setEmail] = useState();
@@ -95,7 +94,7 @@ const byPass = (e) => {
   )
 }
 Login.propTypes = {
-  setToken: PropTypes.func.isRequired
+  setToken: token
 
 }
 
