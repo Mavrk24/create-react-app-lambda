@@ -20,7 +20,7 @@ export default class Display extends Component{
     constructor(props) {
         super(props);
         this.state = {
-        msg:'',
+        msg:'Loading...',
         iter: 1,
         arr: [],
         type: ''
@@ -68,7 +68,7 @@ export default class Display extends Component{
 
       onRequest = () =>{
         var msg = this.state.msg
-        if (msg == ''){
+        if (msg == 'Loading...'){
           this.request();
         }
         else{
