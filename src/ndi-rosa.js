@@ -35,6 +35,7 @@ export default class NDI extends Component{
         this.setState({
             prev: parseInt(ele.target.id)
         });
+        this.getTree();
       }
       
       var tempData = this.state.tempAns
@@ -696,7 +697,7 @@ export default class NDI extends Component{
                     </Form.Group>                
                 </Form>
                     <p id="Nxtbutton1">
-                    <Button class="btn" id={0} type="submit" onClick={this.calculate} href="/rosa"><b>Next</b></Button>
+                    <Button class="btn" id={0} type="submit" onClick={this.calculate} ><b>Next</b></Button>
                     </p>
 
             </div>
