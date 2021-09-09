@@ -11,35 +11,52 @@ export default class NDI extends Component{
       score: 0,
       memory: '',
       prev: 0,
+      tempAns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] //เก็บคำตอบแต่ละข้อ
     };
   }
+  
   getTree = (e) => {
         e.preventDefault();
         this.props.history.push('/qtree');
         console.log('form is valid: submit');
     }
     calculate=(ele)=>{
-      if (ele.target.name!=this.state.memory){
-      this.setState(previousState => ({
-        score: parseInt(parseInt(previousState.score) + parseInt(ele.target.id))
+      if (ele.target.name!=this.state.memory) {
+        this.setState(previousState => ({
+          score: parseInt(parseInt(previousState.score) + parseInt(ele.target.id))
+        }));
+        this.setState({
+          prev: parseInt(ele.target.id)
+        });
+      } else {
+        this.setState(previousState => ({
+          score: parseInt(parseInt(previousState.score) - (this.state.prev) + parseInt(ele.target.id))
         }));
         this.setState({
             prev: parseInt(ele.target.id)
-            });
-      }
-      else{
-        this.setState(previousState => ({
-          score: parseInt(parseInt(previousState.score) - (this.state.prev) + parseInt(ele.target.id))
-          }));
-        this.setState({
-            prev: parseInt(ele.target.id)
-            });
-      }
-      this.setState({
-        memory: ele.target.name
         });
+      }
+      
+      var tempData = this.state.tempAns
+      this.setState({
+        memory: ele.target.name,
+        tempAns: tempData
+      });
+      
       if (ele.target.name == 'btn'){
+        tempData[10] = this.state.score
         console.log('NDI score: '+ this.state.score);
+        fetch('http://localhost:8080/api/users/ndi', {
+          method: 'POST',
+          headers: {
+            'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
+            token: localStorage.getItem("token"),
+            'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.state.tempAns)
+            })
+        } else {
+            tempData[ele.target.name] = parseInt(ele.target.id)
       }
     }
     
@@ -555,7 +572,7 @@ export default class NDI extends Component{
                         ))}
                     </Form.Group>
 
-{/*Q5*/}            <Form.Group className="mb-3 px-4">
+{/*Q9*/}            <Form.Group className="mb-3 px-4">
                         <Form.Label id="question1">9. การนอนหลับ</Form.Label>
                         {['radio'].map((type) => (
                             <div key={`default-${type}`} className="mb-3">
@@ -678,10 +695,9 @@ export default class NDI extends Component{
                         ))}
                     </Form.Group>                
                 </Form>
-                <Button class="btn" id={0} type="submit" name="btn" onClick={this.calculate}>Finalize</Button>
-                <p id="Nxtbutton1">
-                    <Button class="btn" id="btn-login" type="submit" onClick={this.getTree}><b>Next</b></Button>
-                </p>
+                    <p id="Nxtbutton1">
+                    <Button class="btn" id={0} type="submit" onClick={this.calculate} href="/rosa"><b>Next</b></Button>
+                    </p>
 
             </div>
         )
