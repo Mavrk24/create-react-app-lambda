@@ -75,7 +75,7 @@ render() {
 
 
 {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
-               
+    {
                 if (value==1){ 
                   {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
                   return (<div class="embed-responsive embed-responsive-16by9 video_size">
@@ -140,10 +140,9 @@ render() {
 
 
 
-
+}
             </div>
 
         )
-    }
+    };
 }
-    
