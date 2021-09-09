@@ -64,18 +64,7 @@ export default class Recommendation extends Component{
         }
     }
 render() {
-        return(
-            <div>
-
-            <h1 class="mx-5 pb-3" id="demographic-data">
-              Result and Recommendation <br/>
-              <p class="mt-2" id="survey"> ผลการประเมินสภาพแวดล้อมในการนั่งทำงาน </p>
-            </h1>
-
-
-
-{/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
-    {
+    const renderVDO = () =>  {
                 if (value==1){ 
                   {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
                   return (<div class="embed-responsive embed-responsive-16by9 video_size">
@@ -137,10 +126,19 @@ render() {
                       ref="vidRef2" id={10} type="video/mp4" src={stretching_10} hidden="hidden"></video>
                   </div>);
                   }
-
-
-
 }
+        return(
+            <div>
+
+            <h1 class="mx-5 pb-3" id="demographic-data">
+              Result and Recommendation <br/>
+              <p class="mt-2" id="survey"> ผลการประเมินสภาพแวดล้อมในการนั่งทำงาน </p>
+            </h1>
+            {renderVDO()}
+    
+
+{/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
+   
             </div>
 
         )
