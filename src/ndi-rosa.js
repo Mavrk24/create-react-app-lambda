@@ -46,7 +46,7 @@ export default class NDI extends Component{
       if (ele.target.name == 'btn'){
         tempData[10] = this.state.score
         console.log('NDI score: '+ this.state.score);
-        fetch('http://localhost:8080/api/users/ndi', {
+        fetch('https://euhabit-server.herokuapp.com/api/users/ndi', {
           method: 'POST',
           headers: {
             'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
