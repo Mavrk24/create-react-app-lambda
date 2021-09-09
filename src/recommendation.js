@@ -21,7 +21,7 @@ export default class Recommendation extends Component{
         super(props);
         this.state = {
             target:'',
-            randnum: Math.random() //แก้เอาสุ่มเลขมาไว้ตรงนี้,
+            randnum: Math.random(), //แก้เอาสุ่มเลขมาไว้ตรงนี้
             value = -1;
         }
     };
