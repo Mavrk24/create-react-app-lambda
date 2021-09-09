@@ -46,7 +46,6 @@ postrequest = () => {
         },
         body: JSON.stringify(payload.payload)
     })
-    .then( res => {
         axios.post("https://euhabit-api.herokuapp.com/intervention", JSON.stringify(payload), {
         headers: {
           'Content-Type': 'application/json',
