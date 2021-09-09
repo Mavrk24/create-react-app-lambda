@@ -75,50 +75,67 @@ export default class Recommendation extends Component{
                 </h1>
 
 
-
-                {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
-                <div class="embed-responsive embed-responsive-16by9 video_size">
-                    <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id={1} type="video/mp4" src={stretching_1} hidden="hidden"></video>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9 video_size">
-                    <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id={2} type="video/mp4" src={stretching_2} hidden="hidden"></video>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9 video_size">
-                    <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id={3} type="video/mp4" src={stretching_3} hidden="hidden"></video>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9 video_size">
-                    <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id={4} type="video/mp4" src={stretching_4} hidden="hidden"></video>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9 video_size">
-                    <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id={5} type="video/mp4" src={stretching_5} hidden="hidden"></video>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9 video_size">
-                    <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id={6} type="video/mp4" src={stretching_6} hidden="hidden"></video>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9 video_size">
-                    <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id={7} type="video/mp4" src={stretching_7} hidden="hidden"></video>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9 video_size">
-                    <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id={8} type="video/mp4" src={stretching_8} hidden="hidden"></video>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9 video_size">
-                    <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id={9} type="video/mp4" src={stretching_9} hidden="hidden"></video>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9 video_size">
-                    <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
-                    ref="vidRef2" id={10} type="video/mp4" src={stretching_10} hidden="hidden"></video>
-                </div>
-
-
+                if (value==1){ 
+                  {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
+                  <div class="embed-responsive embed-responsive-16by9 video_size">
+                      <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
+                      ref="vidRef2" id={1} type="video/mp4" src={stretching_1} hidden="hidden"></video>
+                  </div>
+                  }
+                  else if (value==2){
+                  <div class="embed-responsive embed-responsive-16by9 video_size">
+                      <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
+                      ref="vidRef2" id={2} type="video/mp4" src={stretching_2} hidden="hidden"></video>
+                  </div>
+                  }
+                  else if (value==3){
+                  <div class="embed-responsive embed-responsive-16by9 video_size">
+                      <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
+                      ref="vidRef2" id={3} type="video/mp4" src={stretching_3} hidden="hidden"></video>
+                  </div>
+                  }
+                  else if (value==4){
+                  <div class="embed-responsive embed-responsive-16by9 video_size">
+                      <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
+                      ref="vidRef2" id={4} type="video/mp4" src={stretching_4} hidden="hidden"></video>
+                  </div>
+                  }
+                  else if (value==5){
+                  <div class="embed-responsive embed-responsive-16by9 video_size">
+                      <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
+                      ref="vidRef2" id={5} type="video/mp4" src={stretching_5} hidden="hidden"></video>
+                  </div>
+                  }
+                  else if (value==6){
+                  <div class="embed-responsive embed-responsive-16by9 video_size">
+                      <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
+                      ref="vidRef2" id={6} type="video/mp4" src={stretching_6} hidden="hidden"></video>
+                  </div>
+                  }
+                  else if (value==7){
+                  <div class="embed-responsive embed-responsive-16by9 video_size">
+                      <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
+                      ref="vidRef2" id={7} type="video/mp4" src={stretching_7} hidden="hidden"></video>
+                  </div>
+                  }
+                  else if (value==8){
+                  <div class="embed-responsive embed-responsive-16by9 video_size">
+                      <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
+                      ref="vidRef2" id={8} type="video/mp4" src={stretching_8} hidden="hidden"></video>
+                  </div>
+                  }
+                  else if (value==9){
+                  <div class="embed-responsive embed-responsive-16by9 video_size">
+                      <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
+                      ref="vidRef2" id={9} type="video/mp4" src={stretching_9} hidden="hidden"></video>
+                  </div>
+                  }
+                  else if (value==10){
+                  <div class="embed-responsive embed-responsive-16by9 video_size">
+                      <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}
+                      ref="vidRef2" id={10} type="video/mp4" src={stretching_10} hidden="hidden"></video>
+                  </div>
+                  }
 
 
             </div>
