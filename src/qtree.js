@@ -38,7 +38,7 @@ postrequest = () => {
       payload: this.state.arr
     };
     
-    fetch('http://localhost:8080/api/users/qtree', {
+    fetch('https://euhabit-server.herokuapp.com/api/users/qtree', {
         method: 'POST',
         headers: {
             'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
@@ -70,7 +70,7 @@ postrequest = () => {
             payload: text
         };
             
-        fetch('http://localhost:8080/api/users/RecIntervention', {
+        fetch('https://euhabit-server.herokuapp.com/api/users/RecIntervention', {
             method: 'POST',
             headers: {
                 'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
