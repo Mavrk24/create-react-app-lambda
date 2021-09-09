@@ -11,7 +11,31 @@ import {
 } from 'react-form-with-constraints'
 
 export default class Entry extends Component{
+  async updateDemographic(credentials) {
+    return fetch('http://localhost:8080/api/users/demographic', {
+      method: 'POST',
+      headers: {
+        Access-Control-Allow-Origin": "https://euhabit.netlify.app",
+        token: localStorage.getItem("token"),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
+    })
+      .then(data => data.json())
+  }
+  
+  
+  
   sendform = (e) => {
+    const data = {
+      age: document.getElementById("age").value,
+      sex: document.getElementById("sex").value,
+      job: document.getElementById("job").value,
+      faculty: document.getElementById("faculty").value,
+      year: document.getElementById("year").value,
+    }
+    this.updateDemographic(data)
+    
     axios
     .post("/subentry", {
       age: document.getElementById("age").value,
@@ -119,7 +143,6 @@ export default class Entry extends Component{
           </p>
           </ FormWithConstraints>
       </div>
-    
     )
   }
 }
