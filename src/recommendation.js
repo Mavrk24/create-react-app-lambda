@@ -21,7 +21,8 @@ export default class Recommendation extends Component{
         super(props);
         this.state = {
             target:'',
-            randnum: Math.random() //แก้เอาสุ่มเลขมาไว้ตรงนี้
+            randnum: Math.random() //แก้เอาสุ่มเลขมาไว้ตรงนี้,
+            value = -1;
         }
     };
 
@@ -54,17 +55,18 @@ export default class Recommendation extends Component{
             var num = Math.floor(this.state.randnum*5) //สุ่มเลขตั้งแต่สร้างState
             const arr = [1,2,4,7,9]
             var value = arr[num]
-            document.getElementById(value).hidden = false;
+            this.setState ({value : value});
         }
         if (target=='shoulder'){
             const arr = [5,6,10]
             var num = Math.floor(this.state.randnum*3) //สุ่มเลขตั้งแต่สร้างState
             var value = arr[num]
-            document.getElementById(value).hidden = false;
+           this.setState ({value : value});
         }
     }
 render() {
     const renderVDO = () =>  {
+        var value = this.state.value
                 if (value==1){ 
                   {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
                   return (<div class="embed-responsive embed-responsive-16by9 video_size">
