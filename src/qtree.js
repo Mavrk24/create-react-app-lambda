@@ -18,39 +18,49 @@ export default class Display extends Component{
     }
     
     constructor(props) {
-        super(props);
-        this.state = {
-        msg:'',
-        iter: 1,
-        arr: [],
-        type: '',
-        text: []
-        }
-        };
+    super(props);
+    this.state = {
+      msg:'',
+      iter: 1,
+      arr: [],
+      type: ''
+    }
+  };
+    
 getRec = () => {
         this.props.history.push('/recommendation');
         console.log('form is valid: submit');
     }        
-postrequest = () =>{
+    
+postrequest = () => {
   let payload = {
       payload: this.state.arr
     };
-    console.log(JSON.stringify(payload))
-    axios.post("https://euhabit-api.herokuapp.com/intervention", JSON.stringify(payload), {
-      headers: {
+    
+    fetch('http://localhost:8080/api/users/qtree', {
+        method: 'POST',
+        headers: {
+            'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
+            token: localStorage.getItem("token"),
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload.payload)
+    })
+    .then( res => {
+        axios.post("https://euhabit-api.herokuapp.com/intervention", JSON.stringify(payload), {
+        headers: {
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin": "*"
-      }
-  }
-  )
-      .then(response => {
-        console.log(response.data);
-        const num = response.data.text[0][1];
-        const neck = [5,6,11,10,16,17,20,21]
-        const shoulder = [7,12,24]
-        var text = ''
-        if (neck.includes(num+1)==true) {
-            text = 'neck'
+        }
+        });
+        .then(response => {
+            console.log(response.data);
+            const num = response.data.text[0][1];
+            const neck = [5,6,11,10,16,17,20,21]
+            const shoulder = [7,12,24]
+            var text = ''
+            if (neck.includes(num+1)==true) {
+                text = 'neck'
         }
         if (shoulder.includes(num+1)==true) {
             text = 'shoulder'
@@ -58,6 +68,19 @@ postrequest = () =>{
         let payload = {
             payload: text
         };
+            
+        fetch('http://localhost:8080/api/users/RecIntervention', {
+            method: 'POST',
+            headers: {
+                'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
+                token: localStorage.getItem("token"),
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify([payload.payload])
+        })
+           
+        
+          
       localStorage.setItem('target', text);
        this.getRec();
     });
