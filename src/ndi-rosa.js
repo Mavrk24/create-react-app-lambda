@@ -15,8 +15,7 @@ export default class NDI extends Component{
     };
   }
   
-  getTree = (e) => {
-        e.preventDefault();
+  getTree = () => {
         this.props.history.push('/qtree');
         console.log('form is valid: submit');
     }
