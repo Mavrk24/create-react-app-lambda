@@ -22,7 +22,7 @@ export default class Recommendation extends Component{
         this.state = {
             target:'',
             randnum: Math.random(), //แก้เอาสุ่มเลขมาไว้ตรงนี้
-            value = -1;
+            value = -1
         }
     };
 
