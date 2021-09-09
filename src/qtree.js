@@ -20,10 +20,11 @@ export default class Display extends Component{
     constructor(props) {
     super(props);
     this.state = {
-      msg:'',
-      iter: 1,
-      arr: [],
-      type: ''
+        msg:'',
+        iter: 1,
+        arr: [],
+        type: '',
+        text: []
     }
   };
     
@@ -46,12 +47,13 @@ postrequest = () => {
         },
         body: JSON.stringify(payload.payload)
     })
-        axios.post("https://euhabit-api.herokuapp.com/intervention", JSON.stringify(payload), {
+    
+    axios.post("https://euhabit-api.herokuapp.com/intervention", JSON.stringify(payload), {
         headers: {
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin": "*"
         }
-        });
+    })
         .then(response => {
             console.log(response.data);
             const num = response.data.text[0][1];
