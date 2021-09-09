@@ -12,7 +12,7 @@ import {
 
 export default class Entry extends Component{
   async updateDemographic(credentials) {
-    return fetch('http://localhost:8080/api/users/demographic', {
+    return fetch('https://euhabit-server.herokuapp.com/api/users/demographic', {
       method: 'POST',
       headers: {
         'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
