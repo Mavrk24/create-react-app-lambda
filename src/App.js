@@ -3,8 +3,8 @@ import { Form, Button, Container, Col, Row, Modal, FormCheck } from 'react-boots
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Login from '../src/Login';
+import Register from '../src/register-login';
 import useToken from '../src/useToken';
-import Screening from '../src/Screening';
 import Main from '../src/Main'
 import {useState, setState} from 'react';
 import Result from './result';
@@ -19,7 +19,9 @@ import Intervention from './intervention';
 import Workplace from './workplace';
 import Information from './information';
 import Stretching from './stretching';
-import Display from './qtree.js';
+import Navbar from './navbar';
+import Display from './qtree';
+import Recommendation from './recommendation';
 
 function Application() {
   
