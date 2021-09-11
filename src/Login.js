@@ -52,7 +52,6 @@ const byPass = (e) => {
   
   const [checked, setChecked] = useState(false);
   const handleClose = () => setShow(false);
-  const history = useHistory();
   const verified = async e => {
     e.preventDefault();
     if (checked !== true){
