@@ -85,12 +85,6 @@ const byPass = (e) => {
                 </div>
                 </ul>
                 <ul>
-                    <Modal id="Modal"
-            show={show}
-            onHide={handleClose}
-            backdrop="static"
-            keyboard={false}
-          >
  
                  
                 <a style={{color: "27AE60"}} href="/register" onClick={handleClick}>
