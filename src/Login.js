@@ -164,13 +164,14 @@ const byPass = (e) => {
         <Button variant="secondary" onClick={handleClose}>Close</Button>
       </Modal.Footer>
     </Modal>
- <Form id="terms-checkbox">
+ 
                  
-                <a style={{color: "27AE60"}} href="/register" onClick={handleClick}> 
+                <a style={{color: "27AE60"}} href="/register" onClick={handleClick}>
                   <strong> New to euHabit? Register now. </strong> </a>
                 </ul>
               </form>
             </div>
+             <Form id="terms-checkbox">
              <Form.Group controlId="formBasicCheckbox">
                     <Form.Check checked={checked} onClick={handleShow} type="checkbox" label="รับทราบและยินยอมปฎิบัติตามข้อตกลงและเงื่อนไขในการให้บริการของ euHabit" />
                   </Form.Group>
