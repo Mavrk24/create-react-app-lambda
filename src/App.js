@@ -24,7 +24,7 @@ import Stretching from './stretching';
 function Application() {
   
   const history = useHistory();
-  const handleSubmit = async e => {
+  const onSubmit = async e => {
     e.preventDefault();
     history.push('/entry');
   }
@@ -38,7 +38,7 @@ function Application() {
           </div>
 
           <p class="mt-4 Next-button">
-          <Button class="btn" onClick={handleSubmit} variant="dark" id="btn-login" type="submit"><b>Next</b></Button>
+          <Button class="btn" onClick={onSubmit} variant="dark" id="btn-login" type="submit"><b>Next</b></Button>
           </p>
         </div>
           
