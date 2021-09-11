@@ -19,7 +19,7 @@ import Intervention from './intervention';
 import Workplace from './workplace';
 import Information from './information';
 import Stretching from './stretching';
-
+import Display from './qtree.js';
 
 function Application() {
   
@@ -75,7 +75,7 @@ function App() {
     <Route exact path='/workplace' component={Workplace} />
     <Route exact path='/information' component={Information} />
     <Route exact path='/stretching' component={Stretching} />
-  
+  <Route exact path='/qtree' component={Display} />
     </Switch>
 
   </BrowserRouter>
