@@ -42,6 +42,7 @@ const byPass = (e) => {
       password
     });
     setToken(token);
+    verified();
   }
   
   const handleClick = (e) => { 
@@ -52,12 +53,9 @@ const byPass = (e) => {
   const [checked, setChecked] = useState(false);
   const handleClose = () => setShow(false);
   const history = useHistory();
-  const handleSubmit = async e => {
+  const verified = async e => {
     e.preventDefault();
-    if (checked === true){
-    history.push('/entry');
-    }
-    else{
+    if (checked !== true){
       alert('Please agree to our terms & condition.');
     }
   }
