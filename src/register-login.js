@@ -231,6 +231,7 @@ function backtoLogin()  {
                     <Form.Check checked={checked} onClick={handleShow} type="checkbox" label="รับทราบและยินยอมปฎิบัติตามข้อตกลงและเงื่อนไขในการให้บริการของ euHabit" />
                   </Form.Group>
                 </Form>
+                </div>
                 <div class="col">
                   <button class="btn btn-login" onClick={matchPassword} type="submit"><b> Confirm </b></button>
                 </div>
