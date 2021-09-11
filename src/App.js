@@ -3,8 +3,8 @@ import { Form, Button, Container, Col, Row, Modal, FormCheck } from 'react-boots
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Login from '../src/Login';
-import Register from '../src/register-login';
 import useToken from '../src/useToken';
+import Screening from '../src/Screening';
 import Main from '../src/Main'
 import {useState, setState} from 'react';
 import Result from './result';
@@ -19,31 +19,16 @@ import Intervention from './intervention';
 import Workplace from './workplace';
 import Information from './information';
 import Stretching from './stretching';
-import Navbar from './navbar';
-import Display from './qtree';
-import Recommendation from './recommendation';
-
 
 
 function Application() {
- 
-  const [checked, setChecked] = useState(false);
-  const handleClose = () => setShow(false);
+  
   const history = useHistory();
   const handleSubmit = async e => {
     e.preventDefault();
-    if (checked === true){
     history.push('/entry');
-    }
-    else{
-      alert('Please agree to our terms & condition.');
-    }
   }
-  const handleShow = async e => {
-    setShow(true);
-    setChecked(e.currentTarget.checked)
-    e.preventDefault();
-  }
+ 
     return(
     <div className="wrapper">
           <div className="welcome">
@@ -54,12 +39,7 @@ function Application() {
           <Container>
            <Row>
               <Col>
-               
-              </Col>
-            </Row>
-          </Container>
-          
-         
+
           <p class="mt-4 Next-button">
           <Button class="btn" onClick={handleSubmit} variant="dark" id="btn-login" type="submit"><b>Next</b></Button>
           </p>
@@ -73,9 +53,7 @@ function App() {
   if (!token) {
     return <Login setToken={setToken} />
   }
-  else if (token == "register") { 
-    return <Register /> 
-  }   
+ 
   
 
   return(
@@ -87,9 +65,7 @@ function App() {
     <Route path="/main">
       <Main />
     </Route>
-    <Route path="/register">
-      <Register />
-    </Route>
+   
 
     <Route exact path='/entry' component={Entry} />
     <Route exact path='/ndi' component={NDI} />
@@ -101,9 +77,6 @@ function App() {
     <Route exact path='/workplace' component={Workplace} />
     <Route exact path='/information' component={Information} />
     <Route exact path='/stretching' component={Stretching} />
-    <Route exact path='/navbar' component={Navbar} />
-    <Route exact path='/qtree' component={Display} />
-    <Route exact path='/recommendation' component={Recommendation} />
   
     </Switch>
 
