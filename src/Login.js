@@ -49,7 +49,7 @@ const byPass = (e) => {
     e.preventDefault();
     setToken({"token":"register"});
   }
-  
+  const [show, setShow] = useState(false);
   const [checked, setChecked] = useState(false);
   const handleClose = () => setShow(false);
   const verified = async e => {
