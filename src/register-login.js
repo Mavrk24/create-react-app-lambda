@@ -64,6 +64,7 @@ function matchPassword() {
       password,
       password2
     });
+     verified();
     }
 }
 
