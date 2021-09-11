@@ -47,11 +47,13 @@ function Application() {
 
 function App() {
   const { token, setToken } = useToken();
-  if (!token || token == {"token":"register"}) {
+  if (!token {
     return <Login setToken={setToken} />
   }
     
- 
+ else if (token == "register") { 
+    return <Register /> 
+  } 
   
 
   return(
