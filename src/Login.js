@@ -168,14 +168,14 @@ const byPass = (e) => {
                  
                 <a style={{color: "27AE60"}} href="/register" onClick={handleClick}>
                   <strong> New to euHabit? Register now. </strong> </a>
-                </ul>
-              </form>
-            </div>
-             <Form id="terms-checkbox">
+                 <Form id="terms-checkbox">
              <Form.Group controlId="formBasicCheckbox">
                     <Form.Check checked={checked} onClick={handleShow} type="checkbox" label="รับทราบและยินยอมปฎิบัติตามข้อตกลงและเงื่อนไขในการให้บริการของ euHabit" />
                   </Form.Group>
                 </Form>
+                </ul>
+              </form>
+            </div>
         </div>
         </div>
       </div>
