@@ -11,7 +11,7 @@ async function registerUser(credentials) {
   return fetch('https://euhabit-server.herokuapp.com/api/users/register', {
     method: 'POST',
     headers: {
-      'Access-Control-Allow-Origin': 'https://euhabit.netlify.app'
+      'Access-Control-Allow-Origin': 'https://euhabit.netlify.app',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(credentials)
