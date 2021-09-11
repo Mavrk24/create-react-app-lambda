@@ -1,7 +1,6 @@
-import { Form, Button, Container, Col, Row, Modal, FormControl, InputGroup, FormSelect } from 'react-bootstrap';
+import { Form, Button, Container, Col, Row, Modal, FormControl, InputGroup, FormSelect, FormCheck } from 'react-bootstrap';
 import React, {useState} from 'react';
 import './Login.css';
-import { Form, Button, Container, Col, Row, Modal, FormCheck } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
