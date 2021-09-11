@@ -42,7 +42,7 @@ const byPass = (e) => {
       password
     });
     setToken(token);
-    verified();
+   
   }
   
   const handleClick = (e) => { 
