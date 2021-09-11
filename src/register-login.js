@@ -7,16 +7,24 @@ import {validatePassword} from '../src/validate';
 import image from './image.png';
 import LgeuHabit from './LgeuHabit.png';
 
-async function loginUser(credentials) {
+async function registerUser(credentials) {
   return fetch('https://euhabit-server.herokuapp.com/api/users/register', {
     method: 'POST',
     headers: {
-      "Access-Control-Allow-Origin": "https://euhabit.netlify.app",
+      'Access-Control-Allow-Origin': 'https://euhabit.netlify.app'
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(credentials)
   })
-    .then(data => data.json())
+  .then(data => data.json())
+  .then((res) => {
+    alert(res.type)
+    if (!res.isError) {
+      localStorage.removeItem('token');
+      window.location.reload();
+    }
+  })
+  
 }
 
 /* เสนอวิธีแก้ว่า ถ้าเรา set ให้ password กับ password2 ในตอนแรกมีค่าต่างๆกัน 
@@ -48,8 +56,12 @@ function matchPassword() {
         match = 0;
   }
   else {  
-        alert("Account created successfully");
-        match = 1;  
+    registerUser({
+      username,
+      email,
+      password,
+      password2
+    });
     }
 }
 
