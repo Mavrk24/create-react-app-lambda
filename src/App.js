@@ -36,9 +36,6 @@ function Application() {
           <p id="euHabit">euHabit.</p> 
           <p class="mt-5" id="text-welcome">กรุณาทำแบบสอบถามต่อไปนี้เพื่อประเมินความเสี่ยงต่อการเกิดอาการปวดบริเวณคอของท่าน</p>
           </div>
-          <Container>
-           <Row>
-              <Col>
 
           <p class="mt-4 Next-button">
           <Button class="btn" onClick={handleSubmit} variant="dark" id="btn-login" type="submit"><b>Next</b></Button>
