@@ -9,6 +9,48 @@ import Navbar from './navbar';
 
 export default class Profile extends Component{
 
+    state = {
+        user_data: {
+            username: '',
+            email: '',
+            ndi: ''
+        },
+        demographic: {
+            age: '',
+            sex: '',
+            job: '',
+            faculty: '',
+            year: ''
+        },
+        ndi: []
+    }
+
+    componentDidMount = () => {
+        this.renderProfile();
+    }
+
+    renderProfile(){
+        fetch('https://euhabit-server.herokuapp.com/api/users/get_UserData', {
+            method: 'GET',
+            headers: {
+                "Access-Control-Allow-Origin": "https://euhabit.netlify.app",
+                token: localStorage.getItem("token"),
+                'Content-Type': 'application/json'
+            }
+            })
+            .then(res => res.json())
+            .then(res => {
+                this.setState(
+                { 
+                    user_data: res,
+                    demographic: res.demographic,
+                    ndi: res.ndi_score
+                })
+            })
+            .catch((err) => console.error(err))  
+        
+    }
+
     handleClick = e => {
         
         localStorage.clear();
@@ -34,11 +76,11 @@ export default class Profile extends Component{
                     <div class="d-flex flex-column">
                         <div class="d-flex justify-content-center">
                             <p id="heading"> Username: </p>
-                            <p>hi</p> {/* ข้อมูลที่จะดึง */}
+                            <p>{this.state.user_data.username}</p> {/* ข้อมูลที่จะดึง */}
                         </div>
                         <div class="d-flex justify-content-center">
                             <p id="heading"> E-mail: </p>
-                            <p> abs@hotmail.com </p>   {/* ข้อมูลที่จะดึง */} 
+                            <p> {this.state.user_data.email} </p>   {/* ข้อมูลที่จะดึง */} 
                         </div>
                         <div class="d-flex justify-content-center">
                             <p><b> Demographic data </b> </p>   
@@ -46,43 +88,43 @@ export default class Profile extends Component{
                         <div class="alignment">
                             <div class="d-flex">
                                 <p id="heading"> Age: </p>
-                                <p> 16 </p>    {/* ข้อมูลที่จะดึง */}v
+                                <p> {this.state.demographic.age} </p>    {/* ข้อมูลที่จะดึง */}v
                             </div>      
                             <div class="d-flex">
                                 <p id="heading"> Biological sex: </p>
-                                <p> Male </p>    {/* ข้อมูลที่จะดึง */}
+                                <p> {this.state.demographic.sex} </p>    {/* ข้อมูลที่จะดึง */}
                             </div>  
                             <div class="d-flex">
                                 <p id="heading"> Occupation: </p>
-                                <p> Student </p>    {/* ข้อมูลที่จะดึง */}
+                                <p> {this.state.demographic.job}  </p>    {/* ข้อมูลที่จะดึง */}
                             </div> 
                             <div class="d-flex">
                                 <p id="heading"> Faculty: </p>
-                                <p> Medicine </p>    {/* ข้อมูลที่จะดึง */}
+                                <p> {this.state.demographic.faculty} </p>    {/* ข้อมูลที่จะดึง */}
                             </div> 
                             <div class="d-flex">
                                 <p id="heading"> Study year: </p>
-                                <p> 2 </p>    {/* ข้อมูลที่จะดึง */}
+                                <p> {this.state.demographic.year} </p>    {/* ข้อมูลที่จะดึง */}
                             </div>       
                         </div>
                         <div class="d-flex justify-content-center">
                             <p><b> Screening Results </b> </p>  
                         </div>
                         <div class="alignment">
+                            {/*
                             <div class="d-flex">
                                 <p id="heading"> Workplace condition: </p>
-                                <p> 16 </p>    {/* ข้อมูลที่จะดึง */}
-                            </div>      
+                                <p> 16 </p>    
+                            </div>
+                            */}
                             <div class="d-flex">
                                 <p id="heading"> Neck Disability Index (NDI): </p>
-                                <p> 40 </p> {/* ข้อมูลที่จะดึง */}    
+                                <p> {this.state.ndi} </p> {/* ข้อมูลที่จะดึง */}    
                             </div>       
                         </div>
                         
                     </div>
-                </div>
-                
-
+                </div>{/* end Profile */}
             </div>
         )
     }

@@ -15,10 +15,11 @@ export default class NDI extends Component{
     };
   }
   
-  getTree = () => {
+    getTree = () => {
         this.props.history.push('/qtree');
         console.log('form is valid: submit');
     }
+
     calculate=(ele)=>{
       if (ele.target.name!=this.state.memory) {
         this.setState(previousState => ({
@@ -34,7 +35,6 @@ export default class NDI extends Component{
         this.setState({
             prev: parseInt(ele.target.id)
         });
-        this.getTree();
       }
       
       var tempData = this.state.tempAns
@@ -47,14 +47,16 @@ export default class NDI extends Component{
         tempData[10] = this.state.score
         console.log('NDI score: '+ this.state.score);
         fetch('https://euhabit-server.herokuapp.com/api/users/ndi', {
-          method: 'POST',
-          headers: {
-            'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
-            token: localStorage.getItem("token"),
-            'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(this.state.tempAns)
-            })
+            method: 'POST',
+            headers: {
+                'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
+                token: localStorage.getItem("token"),
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state.tempAns)
+        })
+
+        this.getTree();
         } else {
             tempData[ele.target.name] = parseInt(ele.target.id)
       }

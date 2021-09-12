@@ -36,6 +36,7 @@ export default class Recommendation extends Component{
         fetch('https://euhabit-server.herokuapp.com/api/users/get_UserData', {
             method: 'GET',
             headers: {
+                "Access-Control-Allow-Origin": "https://euhabit.netlify.app",
                 token: localStorage.getItem("token"),
                 'Content-Type': 'application/json'
             }
