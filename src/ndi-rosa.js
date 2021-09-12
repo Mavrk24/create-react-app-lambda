@@ -28,7 +28,6 @@ export default class NDI extends Component{
         this.setState({
           prev: parseInt(ele.target.id)
         });
-        console.log('1', this.state)
       } else {
         this.setState(previousState => ({
           score: parseInt(parseInt(previousState.score) - (this.state.prev) + parseInt(ele.target.id))
@@ -36,7 +35,6 @@ export default class NDI extends Component{
         this.setState({
             prev: parseInt(ele.target.id)
         });
-        console.log('2', this.state)
       }
       
       var tempData = this.state.tempAns
@@ -44,8 +42,6 @@ export default class NDI extends Component{
         memory: ele.target.name,
         tempAns: tempData
       });
-
-      console.log('3', this.state)
       
       if (ele.target.name == 'btn'){
         tempData[10] = this.state.score
@@ -62,7 +58,9 @@ export default class NDI extends Component{
         console.log('4', this.state)
         this.getTree();
         } else {
+            console.log(ele.target.name)
             tempData[ele.target.name] = parseInt(ele.target.id)
+            tempData[10] = this.state.score
             console.log('5', this.state)
       }
     }
