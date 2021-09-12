@@ -33,7 +33,7 @@ export default class Recommendation extends Component{
     }
 
     renderProfile(){
-        fetch('http://localhost:8080/api/users/get_UserData', {
+        fetch('https://euhabit-server.herokuapp.com/api/users/get_UserData', {
             method: 'GET',
             headers: {
                 token: localStorage.getItem("token"),
