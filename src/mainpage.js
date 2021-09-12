@@ -9,6 +9,10 @@ import ReactDOM from 'react-dom';
 import LgeuHabit from './LgeuHabit.png';
 import Navbar from './navbar.js';
 import { withRouter } from 'react-router-dom';
+import circularlogo from './circlelogo_euHabit.png';
+import ergo_icon from './ergonomics.icon.png';
+import stretch_icon from './stretching.icon.png';
+
 
 export default class Mainpage extends Component{
 
@@ -27,13 +31,66 @@ export default class Mainpage extends Component{
         return(
             <div>
                 <Navbar />
+{/* Office syndrome definition */}
 
+                <h1 id="topic"> euHabit. <img id="logo-pic" src={circularlogo} alt="euHabit logo" / >  </h1>
+                                
 
-                <p id="Nxtbutton2">
-                <Button class="btn" id="btn-login" type="submit" href="/navbar"> <b> navbar </b> </Button>
-                </p>
- 
-                <p> Home </p> 
+                <div class="heading">
+                    <p> What is <b> office syndrome </b> (musculoskeletal disorders)? </p>
+                </div>
+                    
+                <div class="paragraph-text">
+                    <p>  
+                    "Musculoskeletal disorders (MSD) are injuries or disorders of the muscles, nerves, tendons, joints, cartilage, and spinal discs.
+                    Work-related musculoskeletal disorders (WMSD) are conditions in which: <br/>
+                    - The work environment and performance of work contribute significantly to the condition; and/or <br/>
+                    - The condition is made worse or persists longer due to work conditions"
+                    </p>
+                    <p id="cdc">  
+                    - Centers for Disease Control and Prevention, CDC
+                    </p>
+                </div>
+
+                <div class="heading">
+                    <p> <b> want to prevent? </b> </p>
+                    <p id="clickme"> Click below! </p>
+                </div>
+
+{/* prevention card */}
+
+                <div class="d-flex flex-row justify-content-center mb-5">
+                    <div>
+                        <div class="card mainpage_card h-100">
+                        {/* เอาภาพใน card */}
+                            <button class="btn mainpage_button" type="submit" href="/intervention">
+                                <a href="/intervention">
+                                    <img class="card-img-top" src={ergo_icon} />
+                                </a>
+                            </button>
+                        {/* */}
+                            <div class="card-body card_text_mainpage">
+                                <a class="textlink" type="submit" href="/intervention"><p class="card-title"><b> Ergonomics setting </b></p></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card mainpage_card h-100">
+                        {/* เอาภาพใน card */}
+                            <button class="btn mainpage_button" type="submit">
+                                <a href="/stretching">
+                                    <img class="card-img-top" src={stretch_icon} />
+                                </a>
+                            </button>
+                        {/* */}
+                            <div class="card-body card_text_mainpage">
+                                <a class="textlink" type="submit" href="/stretching"><p class="card-title"><b> Stretching </b></p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
         )
