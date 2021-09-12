@@ -42,9 +42,12 @@ export default class NDI extends Component{
         memory: ele.target.name,
         tempAns: tempData
       });
-      
-      if (ele.target.name != ele.target.name){ // เช็คว่าเป็น NaN รึเปล่า (คลิก Next แล้วได้ NaN) 
-        tempData[10] = this.state.score
+        
+      tempData[ele.target.name] = parseInt(ele.target.id)
+      tempData[10] = this.state.score
+    }
+
+    sendform=()=>{
         console.log('NDI score: '+ this.state.score);
         fetch('https://euhabit-server.herokuapp.com/api/users/ndi', {
             method: 'POST',
@@ -56,12 +59,9 @@ export default class NDI extends Component{
             body: JSON.stringify(this.state.tempAns)
         })
         this.getTree();
-        } else {
-            tempData[ele.target.name] = parseInt(ele.target.id)
-            tempData[10] = this.state.score
-      }
     }
-    
+
+
     render() {
         return(
             <div> 
@@ -698,7 +698,7 @@ export default class NDI extends Component{
                     </Form.Group>                
                 </Form>
                     <p id="Nxtbutton1">
-                    <Button class="btn" id={0} type="submit" onClick={this.calculate} ><b>Next</b></Button>
+                    <Button class="btn" id={0} type="submit" onClick={this.sendform} ><b>Next</b></Button>
                     </p>
 
             </div>
