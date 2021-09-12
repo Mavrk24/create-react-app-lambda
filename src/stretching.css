@@ -26,13 +26,13 @@
 
 /*text in offcanva*/
 .offcanvatext{
-    color: #575757;
-    background-color: azure;
+    color: #000000;
+    background-color: #56b495;
 }
 
 .offcanvatext_body{
-    color: #575757;
-    background-color: antiquewhite;
+    color: #414141;
+    background-color: #f2efe4;
 }
 
 #firstline{
