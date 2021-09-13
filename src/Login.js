@@ -30,10 +30,7 @@ async function loginUser(credentials) {
   const [password, setPassword] = useState();
   {/* Log in Submit */}
   
-const byPass = (e) => { 
-  e.preventDefault();
-  setToken({"token":"test123"});
-}
+
   const handleSubmit = async e => {
     e.preventDefault();
     const token = await loginUser({
@@ -41,7 +38,7 @@ const byPass = (e) => {
       username,
       password
     });
-    setToken(token);
+    setToken(token.token);
    
   }
   
