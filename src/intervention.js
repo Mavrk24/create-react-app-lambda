@@ -14,7 +14,7 @@ import Navbar from './navbar';
 export default class Intervention extends Component{
 
 getStretching = () => {
-        this.props.history.push('/recommendation');
+        this.props.history.push('/stretching');
 }
     render() {
         return(
