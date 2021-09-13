@@ -21,6 +21,10 @@ import Information from './information';
 import Stretching from './stretching';
 import Navbar from './navbar';
 import Display from './qtree';
+import Profile from './userprofile';
+import Stretching from './stretching';
+import Intervention from './intervention';
+import Information from './information';
 import Recommendation from './recommendation';
 
 function Application() {
@@ -86,6 +90,10 @@ function App() {
     <Route exact path='/stretching' component={Stretching} />
   <Route exact path='/qtree' component={Display} />
     <Route exact path='/recommendation' component={Recommendation} />
+        <Route exact path='/userprofile' component={Profile} />
+        <Route exact path='/intervention' component={Intervention} />
+        <Route exact path='/stretching' component={Stretching} />
+        <Route exact path='/Information' component={Information} />
     </Switch>
 
   </BrowserRouter>
