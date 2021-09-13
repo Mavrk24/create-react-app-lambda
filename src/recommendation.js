@@ -67,10 +67,9 @@ export default class Recommendation extends Component{
     }
     
     
-    const history = useHistory();
     const ReturntoMain = async e => {
     e.preventDefault();
-    history.push('/mainpage');
+    this.props.history.push('/mainpage');
   }
 render() {
     const renderVDO = () =>  {
@@ -145,7 +144,7 @@ render() {
               <p class="mt-2" id="survey"> ผลการประเมินสภาพแวดล้อมในการนั่งทำงาน </p>
             </h1>
             {renderVDO()}
-            <Button onClick={this.ReturntoMain}> Retuen to mainpage </Button>
+            <Button onClick={ReturntoMain()}> Retuen to mainpage </Button>
     
 
 {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
