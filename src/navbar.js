@@ -16,6 +16,19 @@ class Navbar extends Component{
         window.location.reload();
       
     }
+     getHome = () => {
+        this.props.history.push('/mainpage'); 
+    } getProfile = () => {
+        this.props.history.push('/profile'); 
+    } getResult = () => {
+        this.props.history.push('/result'); 
+    } getErgo = () => {
+        this.props.history.push('/intervention'); 
+    } getStretching = () => {
+        this.props.history.push('/stretching'); 
+    } getInfo = () => {
+        this.props.history.push('/Information'); 
+    }
     state = {
         username =''
     }
@@ -60,25 +73,25 @@ class Navbar extends Component{
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/mainpage">Home</a>
+                            <a class="nav-link active" aria-current="page" onClick={this.getHome}>Home</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="/userprofile">Profile</a>
+                            <a class="nav-link"  onClick={this.getProfile}>Profile</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="/result">Personal Recommendation</a>
+                            <a class="nav-link"  onClick={this.getResult}>Personal Recommendation</a>
                             </li>
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Prevention and Intervention
                             </a>
                                 <ul class="dropdown-menu color1" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" id="navoption" href="intervention">Ergonomics setting</a></li>
-                                    <li><a class="dropdown-item" id="navoption" href="stretching">Stretching</a></li>
+                                    <li><a class="dropdown-item" id="navoption"  onClick={this.getErgo}>Ergonomics setting</a></li>
+                                    <li><a class="dropdown-item" id="navoption"  onClick={this.getStretching}>Stretching</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="/Information">Information</a>
+                            <a class="nav-link"  onClick={this.getInfo}>Information</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link" href="/" id="signout" type="submit" onClick={this.handleClick}>Sign Out</a>
