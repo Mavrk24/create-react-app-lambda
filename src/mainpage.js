@@ -26,12 +26,15 @@ export default class Mainpage extends Component{
         window.location.reload();
       
     }
-getErgo = () => {
+
+    getErgo = () => {
              this.props.history.push('/intervention');
      }
-getStretching = () => {
+
+    getStretching = () => {
              this.props.history.push('/stretching');
      }
+
     render() {
         return(
             <div>
@@ -68,14 +71,14 @@ getStretching = () => {
                     <div>
                         <div class="card mainpage_card h-100">
                         {/* เอาภาพใน card */}
-                            <button class="btn mainpage_button" type="submit" onClick={getErgo}>
-                                <a onClick={getErgo}>
+                            <button class="btn mainpage_button" type="submit" onClick={this.getErgo}>
+                                <a onClick={this.getErgo}>
                                     <img class="card-img-top" src={ergo_icon} />
                                 </a>
                             </button>
                         {/* */}
                             <div class="card-body card_text_mainpage">
-                                <a class="textlink" type="submit" onClick={getErgo}><p class="card-title"><b> Ergonomics setting </b></p></a>
+                                <a class="textlink" type="submit" onClick={this.getErgo}><p class="card-title"><b> Ergonomics setting </b></p></a>
                             </div>
                         </div>
                     </div>
@@ -84,13 +87,13 @@ getStretching = () => {
                         <div class="card mainpage_card h-100">
                         {/* เอาภาพใน card */}
                             <button class="btn mainpage_button" type="submit">
-                                <a onClick={getStretching}>
+                                <a onClick={this.getStretching}>
                                     <img class="card-img-top" src={stretch_icon} />
                                 </a>
                             </button>
                         {/* */}
                             <div class="card-body card_text_mainpage">
-                                <a class="textlink" type="submit" onClick={getStretching}><p class="card-title"><b> Stretching </b></p></a>
+                                <a class="textlink" type="submit" onClick={this.getStretching}><p class="card-title"><b> Stretching </b></p></a>
                             </div>
                         </div>
                     </div>
