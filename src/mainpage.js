@@ -26,8 +26,8 @@ export default class Mainpage extends Component{
         window.location.reload();
       
     }
-
-    getErgo = () => {
+   
+getErgo = () => {
              this.props.history.push('/intervention');
      }
 

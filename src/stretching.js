@@ -5,6 +5,7 @@ import ReactPlayer from 'react-player';
 import './stretching.css';
 import ReactDOM from 'react-dom';
 import LgeuHabit from './LgeuHabit.png';
+import { useHistory } from "react-router-dom";
 /*video*/
 import stretching_1 from './stretching_1.mp4';
 import stretching_2 from './stretching_2.mp4';
@@ -83,7 +84,9 @@ export default class Stretching extends Component {
         this.refs.vidRef10.pause();
         this.refs.vidRef10.currentTime = 0;
     }
-
+    getMain = () =>{
+        this.props.history.push('/intervention'); 
+    }
     render() {
         return(
             <div>
@@ -493,7 +496,7 @@ export default class Stretching extends Component {
             </div>            
 
         <p id="Nxtbutton2" class="mt-5">
-            <Button class="btn" id="btn-login" type="submit" href="/intervention"> <b> go to Ergonomics setting </b> </Button>
+            <Button class="btn" id="btn-login" type="submit"onClick={this.getErgo}> <b> go to Ergonomics setting </b> </Button>
         </p>
 
 

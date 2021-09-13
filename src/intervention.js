@@ -6,13 +6,16 @@ import { useHistory } from 'react-router-dom';
 import './intervention.css';
 import ReactDOM from 'react-dom';
 import LgeuHabit from './LgeuHabit.png';
+
 import ergonomics from './ergonomics picture.png';
 import Navbar from './navbar';
 
 
 export default class Intervention extends Component{
 
-
+getStretching = () => {
+        this.props.history.push('/stretching');
+}
     render() {
         return(
         <div> 
@@ -197,7 +200,7 @@ export default class Intervention extends Component{
             </div>
 
             <p id="Nxtbutton2" class="mt-4">
-                <Button class="btn" id="btn-login" type="submit" href="/stretching"> <b>go to stretching </b> </Button>
+                <Button class="btn" id="btn-login" type="submit" onClick={this.getStretching}> <b>go to stretching </b> </Button>
             </p>
 
         </div>
