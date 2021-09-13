@@ -496,7 +496,7 @@ export default class Stretching extends Component {
             </div>            
 
         <p id="Nxtbutton2" class="mt-5">
-            <Button class="btn" id="btn-login" type="submit"onClick={getErgo}> <b> go to Ergonomics setting </b> </Button>
+            <Button class="btn" id="btn-login" type="submit"onClick={this.getErgo}> <b> go to Ergonomics setting </b> </Button>
         </p>
 
 
