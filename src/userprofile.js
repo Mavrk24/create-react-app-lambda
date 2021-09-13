@@ -87,23 +87,23 @@ export default class Profile extends Component{
                         </div>
                         <div class="alignment">
                             <div class="d-flex">
-                                <p id="heading"> Age: </p>
-                                <p> {this.state.demographic.age} </p>    {/* ข้อมูลที่จะดึง */}v
+                                <p id="heading"> อายุ: </p>
+                                <p> {this.state.demographic.age} </p>    {/* ข้อมูลที่จะดึง */}
                             </div>      
                             <div class="d-flex">
-                                <p id="heading"> Biological sex: </p>
+                                <p id="heading"> เพศ: </p>
                                 <p> {this.state.demographic.sex} </p>    {/* ข้อมูลที่จะดึง */}
                             </div>  
                             <div class="d-flex">
-                                <p id="heading"> Occupation: </p>
+                                <p id="heading"> อาชีพ: </p>
                                 <p> {this.state.demographic.job}  </p>    {/* ข้อมูลที่จะดึง */}
                             </div> 
                             <div class="d-flex">
-                                <p id="heading"> Faculty: </p>
+                                <p id="heading"> คณะ: </p>
                                 <p> {this.state.demographic.faculty} </p>    {/* ข้อมูลที่จะดึง */}
                             </div> 
                             <div class="d-flex">
-                                <p id="heading"> Study year: </p>
+                                <p id="heading"> ชั้นปี: </p>
                                 <p> {this.state.demographic.year} </p>    {/* ข้อมูลที่จะดึง */}
                             </div>       
                         </div>
