@@ -26,10 +26,10 @@ class Navbar extends Component{
         this.props.history.push('/mainpage'); 
     } 
     getProfile = () => {
-        this.props.history.push('/profile'); 
+        this.props.history.push('/userprofile'); 
     } 
     getResult = () => {
-        this.props.history.push('/result'); 
+        this.props.history.push('/recommendation'); 
     } 
     getErgo = () => {
         this.props.history.push('/intervention'); 
