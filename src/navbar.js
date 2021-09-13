@@ -57,7 +57,7 @@ class Navbar extends Component{
             .then(res => {
                 this.setState(
                 { 
-                    username=res.username
+                    username:res.username
                 })
             })
             .catch((err) => console.error(err))  
