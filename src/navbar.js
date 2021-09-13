@@ -3,7 +3,7 @@ import { Component } from 'react';
 import LgeuHabit from './LgeuHabit.png';
 import LgeuHabit_white from './LgeuHabit-white.png';
 import './mainpage.css';
-import { withRouter } from 'react-router-dom';
+import { withRouter,useHistory } from 'react-router-dom';
 
 class Navbar extends Component{
 
