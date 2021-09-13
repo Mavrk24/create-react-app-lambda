@@ -21,7 +21,7 @@ import Information from './information';
 import Stretching from './stretching';
 import Navbar from './navbar';
 import Display from './qtree';
-
+import Recommendation from './recommendation';
 function Application() {
   const target = window.localStorage.getItem('target');
   const history = useHistory();
@@ -84,6 +84,7 @@ function App() {
     <Route exact path='/information' component={Information} />
     <Route exact path='/stretching' component={Stretching} />
   <Route exact path='/qtree' component={Display} />
+      <Route exact path='/recommendation' component={Recommendation} />
     </Switch>
 
   </BrowserRouter>
