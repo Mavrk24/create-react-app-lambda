@@ -26,10 +26,10 @@ export default class Mainpage extends Component{
         window.location.reload();
       
     }
-     getErgo = () =>{
+getErgo = () => {
              this.props.history.push('/intervention');
      }
-        getStretching = () =>{
+getStretching = () => {
              this.props.history.push('/stretching');
      }
     render() {
