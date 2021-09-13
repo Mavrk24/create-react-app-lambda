@@ -16,7 +16,7 @@ class Navbar extends Component{
 
     handleClick = e => {
         
-        localStorage.clear();
+       localStorage.removeItem('token');
         e.preventDefault();
         this.props.history.push('/');
         window.location.reload();
