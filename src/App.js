@@ -24,11 +24,16 @@ import Display from './qtree';
 import Recommendation from './recommendation';
 
 function Application() {
-  
+  const target = window.localStorage.getItem('target');
   const history = useHistory();
   const onSubmit = async e => {
     e.preventDefault();
+    if (!target){
     history.push('/entry');
+    }
+    else{
+    history.push('/mainpage');
+    }
   }
  
     return(
