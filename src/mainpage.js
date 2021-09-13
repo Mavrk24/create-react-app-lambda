@@ -26,7 +26,12 @@ export default class Mainpage extends Component{
         window.location.reload();
       
     }
-
+     getErgo = () =>{
+             this.props.history.push('/intervention');
+     }
+        getStretching = () =>{
+             this.props.history.push('/stretching');
+     }
     render() {
         return(
             <div>
@@ -63,14 +68,14 @@ export default class Mainpage extends Component{
                     <div>
                         <div class="card mainpage_card h-100">
                         {/* เอาภาพใน card */}
-                            <button class="btn mainpage_button" type="submit" href="/intervention">
-                                <a href="/intervention">
+                            <button class="btn mainpage_button" type="submit" onClick={getErgo}>
+                                <a onClick={getErgo}>
                                     <img class="card-img-top" src={ergo_icon} />
                                 </a>
                             </button>
                         {/* */}
                             <div class="card-body card_text_mainpage">
-                                <a class="textlink" type="submit" href="/intervention"><p class="card-title"><b> Ergonomics setting </b></p></a>
+                                <a class="textlink" type="submit" onClick={getErgo}><p class="card-title"><b> Ergonomics setting </b></p></a>
                             </div>
                         </div>
                     </div>
@@ -79,13 +84,13 @@ export default class Mainpage extends Component{
                         <div class="card mainpage_card h-100">
                         {/* เอาภาพใน card */}
                             <button class="btn mainpage_button" type="submit">
-                                <a href="/stretching">
+                                <a onClick={getStretching}>
                                     <img class="card-img-top" src={stretch_icon} />
                                 </a>
                             </button>
                         {/* */}
                             <div class="card-body card_text_mainpage">
-                                <a class="textlink" type="submit" href="/stretching"><p class="card-title"><b> Stretching </b></p></a>
+                                <a class="textlink" type="submit" onClick={getStretching}><p class="card-title"><b> Stretching </b></p></a>
                             </div>
                         </div>
                     </div>
