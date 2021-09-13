@@ -18,15 +18,20 @@ class Navbar extends Component{
     }
      getHome = () => {
         this.props.history.push('/mainpage'); 
-    } getProfile = () => {
+    } 
+    getProfile = () => {
         this.props.history.push('/profile'); 
-    } getResult = () => {
+    } 
+    getResult = () => {
         this.props.history.push('/result'); 
-    } getErgo = () => {
+    } 
+    getErgo = () => {
         this.props.history.push('/intervention'); 
-    } getStretching = () => {
+    } 
+    getStretching = () => {
         this.props.history.push('/stretching'); 
-    } getInfo = () => {
+    } 
+    getInfo = () => {
         this.props.history.push('/Information'); 
     }
     state = {
