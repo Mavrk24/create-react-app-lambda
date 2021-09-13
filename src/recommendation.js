@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { Component } from 'react';
 import './recommendation.css';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 /*video*/
 import stretching_1 from './stretching_1.mp4';
 import stretching_2 from './stretching_2.mp4';
@@ -25,7 +26,6 @@ export default class Recommendation extends Component{
             value: -1
         }
     };
-
     // fetch recommendation มาใส่ t=state.target
     componentDidMount = () => {
         this.renderProfile();
@@ -65,6 +65,13 @@ export default class Recommendation extends Component{
            this.setState ({value : value});
         }
     }
+    
+    
+    const history = useHistory();
+    const ReturntoMain = async e => {
+    e.preventDefault();
+    history.push('/mainpage');
+  }
 render() {
     const renderVDO = () =>  {
         var value = this.state.value
@@ -138,6 +145,7 @@ render() {
               <p class="mt-2" id="survey"> ผลการประเมินสภาพแวดล้อมในการนั่งทำงาน </p>
             </h1>
             {renderVDO()}
+            <Button onClick={this.ReturntoMain}> Retuen to mainpage </Button>
     
 
 {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
