@@ -143,7 +143,7 @@ render() {
               <p class="mt-2" id="survey"> ผลการประเมินสภาพแวดล้อมในการนั่งทำงาน </p>
             </h1>
             {renderVDO()}
-            <Button onClick={this.getMain}> Retuen to mainpage </Button>
+            <Button onClick={this.getMain}> Return to mainpage </Button>
     
 
 {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
