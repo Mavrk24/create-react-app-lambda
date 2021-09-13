@@ -84,7 +84,7 @@ export default class Stretching extends Component {
         this.refs.vidRef10.pause();
         this.refs.vidRef10.currentTime = 0;
     }
-    getMain = () =>{
+    getErgo = () =>{
         this.props.history.push('/intervention'); 
     }
     render() {
