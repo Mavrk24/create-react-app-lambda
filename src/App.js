@@ -84,7 +84,6 @@ function App() {
     <Route exact path='/information' component={Information} />
     <Route exact path='/stretching' component={Stretching} />
   <Route exact path='/qtree' component={Display} />
-    <Route exact path='/recommendation' component={Recommendation} />
     </Switch>
 
   </BrowserRouter>
