@@ -6,7 +6,13 @@ import './mainpage.css';
 import { withRouter,useHistory } from 'react-router-dom';
 
 class Navbar extends Component{
-
+    constructor(props) {
+    super(props);
+    this.state = {
+        username:''
+    }
+  };
+    
 
     handleClick = e => {
         
@@ -34,10 +40,7 @@ class Navbar extends Component{
     getInfo = () => {
         this.props.history.push('/Information'); 
     }
-    state = {
-        username =''
-    }
-    
+  
     componentDidMount = () => {
         this.renderProfile();
     }
