@@ -57,8 +57,8 @@ postrequest = () => {
         .then(response => {
             console.log(response.data);
             const num = response.data.text[0][1];
-            const neck = [5,6,11,10,16,17,20,21]
-            const shoulder = [7,12,24]
+            const neck = [1,2,3,7,8]
+            const shoulder = [4,11]
             var text = ''
             if (neck.includes(num+1)==true) {
                 text = 'neck'
