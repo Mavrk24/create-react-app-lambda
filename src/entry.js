@@ -15,7 +15,7 @@ export default class Entry extends Component{
     return fetch('https://euhabit-server.herokuapp.com/api/users/demographic', {
       method: 'POST',
       headers: {
-        'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
+        'Access-Control-Allow-Origin': "https://euhabit.netlify.app/entry",
         token: localStorage.getItem("token"),
         'Content-Type': 'application/json'
       },

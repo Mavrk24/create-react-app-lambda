@@ -6,7 +6,7 @@ a1 = Node('Do you use laptop for > 3 hours per day ?', parent=root, value='null'
     Node('Do you use laptop on sofa / on bed ?',  value='null',label='Have a life'),#2
     Node('Do you use laptop on lap ?',  value='null',label='Have a life'), #3
     Node('Do you have to look down on screen ?', value='null',label='Have a life')], label='') #4s
-a2 = Node('Do you have to look while you type ?', parent=root , value='null',label=''), 
+a2 = Node('Do you have to look while you type ?', parent=root , value='null',label='')
 b11 = Node('Do you use iPad/Tablet > 3 hours per day ?', parent=root, value='null',children=[
     Node('Do you use iPad/Tablet on table / on lap (or bed) ?',  value='null',label='')], label='') #7
 b2 = Node('Do you use without standing cases ?', parent=root, value='null',label='') #8
