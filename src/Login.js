@@ -41,7 +41,7 @@ const byPass = (e) => {
       username,
       password
     });
-    setToken(token.token);
+    setToken(token);
    
   }
   
