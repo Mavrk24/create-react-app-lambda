@@ -68,7 +68,7 @@
     text-align: left;
 }
 
-#btn-finish{
+.btn-finish{
     color: #ffffff;
     letter-spacing: 1px;
     text-transform: uppercase;

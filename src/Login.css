@@ -120,3 +120,12 @@ body {
     text-align: center;
 }
 
+/* register checkbox */
+#terms-checkbox-register{
+    font-family:  Bai Jamjuree, Verdana, sans-serif;
+    font-style: normal;
+    text-align: center;
+    position: relative;
+    color: #808080;
+
+  }

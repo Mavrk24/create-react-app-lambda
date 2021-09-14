@@ -156,7 +156,9 @@ function backtoLogin()  {
                 </div>
               </ul>
               <ul>
-              
+
+{/* Inside Term and Privacy */}
+
                     <Modal id="Modal"
             show={show}
             onHide={handleClose}
@@ -204,7 +206,6 @@ function backtoLogin()  {
     หากผู้ใช้บริการพบปัญหา หรือ ช่องโหว่ด้านความปลอดภัย ตลอดจนเหตุให้เชื่อว่าความเป็นส่วนตัวได้ถูกละเมิด กรุณาติดต่อ “เรา” เพื่อทำการตรวจสอบ และ แก้ไขปัญหาดังกล่าว
     ข้อมูลส่วนตัว และ บัญชีส่วนตัว
     เมื่อผู้ใช้บริการสร้างบัญชีผู้ใช้งาน เพื่อใช้บริการ "euHabit" “เรา” จะทำการจัดเก็บข้อมูล ส่วนตัวต่างๆแต่ไม่จำกัดเฉพาะข้อมูลเหล่านี้ของผู้ใช้บริการ
-    โดยข้อมูลส่วนตัวของผู้ใช้บริการ มีการดูแลภายใต้คณะกรรมการคุ้มครองข้อมูลส่วนบุคคลของ MNT MediTech ในลักษณะ "ตามสภาพ" โดยไม่มีเงื่อนไข การรับประกัน หรือข้อกำหนดลักษณะอื่นใด
     
     ชื่อ-นามสกุล
     วัน-เดือน-ปี เกิด
@@ -214,7 +215,7 @@ function backtoLogin()  {
     ประวัติสุขภาพ ตลอดจนประวัติการรักษา และ ประวัติการใช้บริการ
     ข้อมูลที่ผู้ใช้บริการได้ทำการส่งมอบให้ “เรา” ผ่านช่องทางต่างๆ เช่นการกรอกข้อมูลใน “แอพ” จะถูกจัดเก็บในระบบ ผู้ใช้บริการมีหน้าที่รับผิดชอบในการส่งมอบข้อมูลที่ถูกต้อง
     
- 
+    
     
     
         </p>
@@ -225,18 +226,22 @@ function backtoLogin()  {
       </Modal.Footer>
     </Modal>
       
-              <div class="mt-4 row">
-                <div class="col">
-                  <Form id="terms-checkbox">
-             <Form.Group controlId="formBasicCheckbox">
-                    <Form.Check checked={checked} onClick={handleShow} type="checkbox" label="รับทราบและยินยอมปฎิบัติตามข้อตกลงและเงื่อนไขในการให้บริการของ euHabit" />
-                  </Form.Group>
-                </Form>
-                </div>
-                <div class="col">
+    {/*Term and Privacy checkbox*/}
+
+    <div class="mt-4 mb-2">
+            <Form id="terms-checkbox-register">
+              <Form.Group controlId="formBasicCheckbox">                    
+                <Form.Check checked={checked} onClick={handleShow} type="checkbox" label="รับทราบและยินยอมปฎิบัติตามข้อตกลงและเงื่อนไขในการให้บริการของ euHabit" />
+              </Form.Group>
+            </Form>
+          </div>  
+              </ul>
+              <ul>
+              <div class="mt-4 flex-row d-flex">
+                <div>
                   <button class="btn btn-login" onClick={matchPassword} type="submit"><b> Confirm </b></button>
                 </div>
-                <div class="col">
+                <div class="ms-3">
                   <button class="btn btn-login" onClick={backtoLogin} type="submit"><b> Back </b></button>
                 </div>
               </div>

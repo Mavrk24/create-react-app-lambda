@@ -99,7 +99,6 @@ getErgo = () => {
                     </div>
                 </div>
 
-
             </div>
         )
     }

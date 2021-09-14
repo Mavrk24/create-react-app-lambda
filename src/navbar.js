@@ -103,7 +103,7 @@ class Navbar extends Component{
                             <a class="nav-link"  onClick={this.getInfo}>Information</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="/" id="signout" type="submit" onClick={this.handleClick}>Sign Out</a>
+                            <a class="nav-link" href="/" type="submit" onClick={this.handleClick}>Sign Out</a>
                             </li>
                         </ul>
                         <span class="navbar-text">
