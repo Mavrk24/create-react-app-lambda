@@ -35,19 +35,6 @@ export default class Entry extends Component{
       year: document.getElementById("year").value,
     }
     this.updateDemographic(data)
-    
-    axios
-    .post("/subentry", {
-      age: document.getElementById("age").value,
-      sex: document.getElementById("sex").value,
-      job: document.getElementById("job").value,
-      faculty: document.getElementById("faculty").value,
-      year: document.getElementById("year").value,
-      username: JSON.parse(localStorage.getItem('token')).token,
-})
-.then(function (response) {
-   console.log(response);
-});
 };
 
   handleChange = e => {
