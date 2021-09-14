@@ -8,9 +8,6 @@ import { withRouter,useHistory } from 'react-router-dom';
 class Navbar extends Component{
     constructor(props) {
     super(props);
-    this.state = {
-        username:''
-    }
   };
     
 
@@ -40,30 +37,7 @@ class Navbar extends Component{
     getInfo = () => {
         this.props.history.push('/Information'); 
     }
-  
-    componentDidMount = () => {
-        this.renderProfile();
-    }
 
-    renderProfile(){
-        fetch('https://euhabit-server.herokuapp.com/api/users/get_UserData', {
-            method: 'GET',
-            headers: {
-                "Access-Control-Allow-Origin": "https://euhabit.netlify.app",
-                token: localStorage.getItem("token"),
-                'Content-Type': 'application/json'
-            }
-            })
-            .then(res => res.json())
-            .then(res => {
-                this.setState(
-                { 
-                    username:res.username
-                })
-            })
-            .catch((err) => console.error(err))  
-        
-    }
     render() {
         return(
             <div>
@@ -103,12 +77,9 @@ class Navbar extends Component{
                             <a class="nav-link"  onClick={this.getInfo}>Information</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="/" id="signout" type="submit" onClick={this.handleClick}>Sign Out</a>
+                            <a class="nav-link" href="/" type="submit" onClick={this.handleClick}>Sign Out</a>
                             </li>
                         </ul>
-                        <span class="navbar-text">
-                            Signed in as: <a id="navoption" href="#login">{this.state.username}</a>
-                        </span>
                     </div> 
                                            
                 </div>
