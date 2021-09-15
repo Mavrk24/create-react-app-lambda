@@ -42,9 +42,7 @@ callMDP = () => {
     }
 })
  .then(response => {
-        console.log(response.data);
-        var key = localStorage.getItem('eCMDQ')
-        const response_action = response.data.key;
+        const response_action = response.data;
         console.log(response_action)
     });
 }; 
