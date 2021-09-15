@@ -34,19 +34,20 @@ getRec = () => {
     }        
 
 callMDP = () => {
-        var int_value = {int_value: parseInt(localStorage.getItem('eCMDQ'))};
-        axios.post("https://euhabit-api.herokuapp.com/mdp", JSON.stringify(int_value), {
-        headers: {
-          'Content-Type': 'application/json',
-          "Access-Control-Allow-Origin": "*"
-        }
-    })
-     .then(response => {
-            console.log(response.data);
-            var key = localStorage.getItem('eCMDQ')
-            const response_action = response.data.key;
-            console.log(response_action)
-    }    
+    var int_value = {int_value: parseInt(localStorage.getItem('eCMDQ'))};
+    axios.post("https://euhabit-api.herokuapp.com/mdp", JSON.stringify(int_value), {
+    headers: {
+      'Content-Type': 'application/json',
+      "Access-Control-Allow-Origin": "*"
+    }
+})
+ .then(response => {
+        console.log(response.data);
+        var key = localStorage.getItem('eCMDQ')
+        const response_action = response.data.key;
+        console.log(response_action)
+    });
+}; 
     
 postrequest = () => {
   let payload = {
