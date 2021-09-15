@@ -74,8 +74,8 @@ postrequest = () => {
                 text = 'neck'
         }
         if (shoulder.includes(num+1)==true) {
-            text = '73686f756c646572';
-            callMDP();
+            text = 'shoulder';
+            this.callMDP();
         }
         let payload = {
             payload: text
