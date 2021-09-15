@@ -40,7 +40,12 @@ callMDP = () => {
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin": "*"
         }
-    });
+    })
+     .then(response => {
+            console.log(response.data);
+            var key = localStorage.getItem('eCMDQ')
+            const response_action = response.data.key;
+            console.log(response_action)
     }    
     
 postrequest = () => {
