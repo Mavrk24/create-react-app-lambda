@@ -64,7 +64,8 @@ postrequest = () => {
                 text = 'neck'
         }
         if (shoulder.includes(num+1)==true) {
-            text = 'shoulder'
+            text = '73686f756c646572';
+            callMDP();
         }
         let payload = {
             payload: text
@@ -86,7 +87,16 @@ postrequest = () => {
        this.getRec();
     });
     };
-  
+    
+    callMDP = () => {
+        var int_value = localStorage.getItem('eCMDQ');
+        axios.post("https://euhabit-api.herokuapp.com/mdp", JSON.stringify(int_value), {
+        headers: {
+          'Content-Type': 'application/json',
+          "Access-Control-Allow-Origin": "*"
+        }
+    });
+    }
 
       onRequest = () =>{
         var text = this.state.text;
