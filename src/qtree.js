@@ -32,6 +32,16 @@ getRec = () => {
         this.props.history.push('/recommendation');
         console.log('form is valid: submit');
     }        
+
+callMDP = () => {
+        var int_value = parseInt(localStorage.getItem('eCMDQ'));
+        axios.post("https://euhabit-api.herokuapp.com/mdp", JSON.stringify(int_value), {
+        headers: {
+          'Content-Type': 'application/json',
+          "Access-Control-Allow-Origin": "*"
+        }
+    });
+    }    
     
 postrequest = () => {
   let payload = {
@@ -88,15 +98,7 @@ postrequest = () => {
     });
     };
     
-    callMDP = () => {
-        var int_value = parseInt(localStorage.getItem('eCMDQ'));
-        axios.post("https://euhabit-api.herokuapp.com/mdp", JSON.stringify(int_value), {
-        headers: {
-          'Content-Type': 'application/json',
-          "Access-Control-Allow-Origin": "*"
-        }
-    });
-    }
+    
 
       onRequest = () =>{
         var text = this.state.text;
