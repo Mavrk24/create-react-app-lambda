@@ -89,7 +89,7 @@ postrequest = () => {
     };
     
     callMDP = () => {
-        var int_value = localStorage.getItem('eCMDQ');
+        var int_value = parseInt(localStorage.getItem('eCMDQ'));
         axios.post("https://euhabit-api.herokuapp.com/mdp", JSON.stringify(int_value), {
         headers: {
           'Content-Type': 'application/json',
