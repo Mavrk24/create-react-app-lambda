@@ -30,8 +30,10 @@ export default class Display extends Component{
     
 getRec = () => {
         this.props.history.push('/recommendation');
-        console.log('form is valid: submit');
-    }        
+    }
+getErgo = () => {
+        this.props.history.push('/intervention');
+    }    
 
 callMDP = () => {
     var int_value = {int_value: parseInt(localStorage.getItem('eCMDQ'))};
@@ -42,8 +44,14 @@ callMDP = () => {
     }
 })
  .then(response => {
-        const response_action = response.data;
+        const response_action = response.data.action;
         console.log(response_action)
+        if (response_action == 'stretch'){
+           this.getRec();
+        }
+        else{
+        this.getErgo();
+        }
     });
 }; 
     
@@ -76,6 +84,7 @@ postrequest = () => {
             var text = ''
             if (neck.includes(num+1)==true) {
                 text = 'neck'
+                this.getRec();
         }
         if (shoulder.includes(num+1)==true) {
             text = 'shoulder';
@@ -98,7 +107,6 @@ postrequest = () => {
         
           
       localStorage.setItem('target', text);
-       this.getRec();
     });
     };
     
