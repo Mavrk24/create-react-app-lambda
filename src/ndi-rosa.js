@@ -48,7 +48,8 @@ export default class NDI extends Component{
     }
 
     sendform=()=>{
-        console.log('NDI score: '+ this.state.score);
+        var score = this.state.score;
+        localStorage.setItem("eCMDQ", Math.floor((score*9)/5));
         fetch('https://euhabit-server.herokuapp.com/api/users/ndi', {
             method: 'POST',
             headers: {
