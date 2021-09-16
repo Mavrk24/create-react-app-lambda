@@ -26,20 +26,13 @@ async function loginUser(credentials) {
  }
   export default function Login({setToken,history}) {
   const [email, setEmail] = useState();
-  const [username, setUserName] = useState();
   const [password, setPassword] = useState();
   {/* Log in Submit */}
-  
-  const byPass = (e) => { 
-    e.preventDefault();
-    setToken({"token":"test123"});
-  }
 
   const handleSubmit = async e => {
     e.preventDefault();
     const s_res = await loginUser({
       email,
-      username,
       password
     });
 
@@ -77,10 +70,6 @@ async function loginUser(credentials) {
               <ul>
                 <p>E-mail</p>
                 <input type="text" onChange={e => setEmail(e.target.value)}/>
-                </ul>
-                <ul>
-                <p>Username</p>
-                <input type="text" onChange={e => setUserName(e.target.value)}/>
                 </ul>
                 <ul>
                 <p>Password</p>
