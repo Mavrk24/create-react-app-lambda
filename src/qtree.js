@@ -155,14 +155,14 @@ postrequest = () => {
       }
       onNo = () =>{
         var array = this.state.arr
-        if (array.length <26){
+        if (array.length <13){
         this.setState({
             arr: this.state.arr.concat(0)
           });
         this.onRequest();
         console.log(this.state.arr);
         }
-        if (array.length >= 25){
+        if (array.length >= 12){
             document.getElementById("save").hidden = false;
         }
       }
