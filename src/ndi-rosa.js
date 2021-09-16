@@ -23,20 +23,20 @@ export default class NDI extends Component{
 
     calculate=(ele)=>{
       if (ele.target.name!=this.state.memory) {
+        var new_count = this.state.count + 1
         this.setState(previousState => ({
           score: parseInt(parseInt(previousState.score) + parseInt(ele.target.id))
         }));
         this.setState({
-          prev: parseInt(ele.target.id)
+          prev: parseInt(ele.target.id),
+          count: new_count
         });
-      } else {
-          var new_count = this.state.count + 1
+      } else {   
         this.setState(previousState => ({
           score: parseInt(parseInt(previousState.score) - (this.state.prev) + parseInt(ele.target.id))
         }));
         this.setState({
-            prev: parseInt(ele.target.id),
-            count: new_count
+            prev: parseInt(ele.target.id)
         });
       }
       
