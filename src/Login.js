@@ -30,18 +30,25 @@ async function loginUser(credentials) {
   const [password, setPassword] = useState();
   {/* Log in Submit */}
   
-const byPass = (e) => { 
-  e.preventDefault();
-  setToken({"token":"test123"});
-}
+  const byPass = (e) => { 
+    e.preventDefault();
+    setToken({"token":"test123"});
+  }
+
   const handleSubmit = async e => {
     e.preventDefault();
-    const token = await loginUser({
+    const s_res = await loginUser({
       email,
       username,
       password
     });
-    setToken(token);
+
+    if (s_res.isError) {
+      alert(s_res.type)
+    } else {
+      setToken({"token": s_res.token});  
+    }
+    
    
   }
   
