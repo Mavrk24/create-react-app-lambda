@@ -11,6 +11,7 @@ export default class NDI extends Component{
       score: 0,
       memory: '',
       prev: 0,
+      count: 0
     };
   }
     calculate=(ele)=>{
@@ -23,18 +24,26 @@ export default class NDI extends Component{
             });
       }
       else{
+          var pre_add = this.state.count
         this.setState(previousState => ({
           score: parseInt(parseInt(previousState.score) - (this.state.prev) + parseInt(ele.target.id))
           }));
         this.setState({
-            prev: parseInt(ele.target.id)
+            prev: parseInt(ele.target.id),
+            count: pre_add + 1
             });
       }
+
       this.setState({
         memory: ele.target.name
         });
       if (ele.target.name == 'btn'){
-        console.log('NDI score: '+ this.state.score);
+          if (this.state.count == 10){
+            console.log('NDI score: '+ this.state.score);
+          } else {
+              alert("กรุณาตอบคำถามให้ครบทุกข้อ")
+          }
+          
       }
     }
     
