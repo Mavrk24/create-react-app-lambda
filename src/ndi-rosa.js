@@ -11,7 +11,8 @@ export default class NDI extends Component{
       score: 0,
       memory: '',
       prev: 0,
-      tempAns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] //เก็บคำตอบแต่ละข้อ
+      tempAns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], //เก็บคำตอบแต่ละข้อ
+      count: 0
     };
   }
   
@@ -29,11 +30,13 @@ export default class NDI extends Component{
           prev: parseInt(ele.target.id)
         });
       } else {
+          var new_count = this.state.count + 1
         this.setState(previousState => ({
           score: parseInt(parseInt(previousState.score) - (this.state.prev) + parseInt(ele.target.id))
         }));
         this.setState({
-            prev: parseInt(ele.target.id)
+            prev: parseInt(ele.target.id),
+            count: new_count
         });
       }
       
@@ -48,18 +51,23 @@ export default class NDI extends Component{
     }
 
     sendform=()=>{
-        var score = this.state.score;
-        localStorage.setItem("eCMDQ", Math.floor((score*9)/5));
-        fetch('https://euhabit-server.herokuapp.com/api/users/ndi', {
-            method: 'POST',
-            headers: {
-                'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
-                token: localStorage.getItem("token"),
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(this.state.tempAns)
-        })
-        this.getTree();
+
+        if (this.state.count == 10){
+            var score = this.state.score;
+            localStorage.setItem("eCMDQ", Math.floor((score*9)/5));
+            fetch('https://euhabit-server.herokuapp.com/api/users/ndi', {
+                method: 'POST',
+                headers: {
+                    'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
+                    token: localStorage.getItem("token"),
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.state.tempAns)
+            })
+            this.getTree();
+        } else {
+            alert("กรุณาตอบแบบสอบถามให้ครบทุกข้อ")
+        } 
     }
 
 
