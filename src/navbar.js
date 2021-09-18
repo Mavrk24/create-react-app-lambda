@@ -77,7 +77,7 @@ class Navbar extends Component{
                             <a class="nav-link"  onClick={this.getInfo}>Information</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" onClick={this.getResult}>Sign Out</a>
+                            <a class="nav-link" onClick={this.handleClick}>Sign Out</a>
                             </li>
                         </ul>
                     </div> 
