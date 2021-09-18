@@ -79,5 +79,12 @@
     align-items: center;
 }
 
+#finish_button{
+    align-items: center;
+    position: relative;
+    top: 2%;
+    text-align: center;
+}
+
 
 

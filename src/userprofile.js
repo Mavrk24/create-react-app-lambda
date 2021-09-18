@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { useHistory } from 'react-router-dom';
 import './userprofile.css';
 import rosa11 from './rosa11.png';
-import LgeuHabit from './LgeuHabit.png';
+import profile from './profile.png';
 import Navbar from './navbar';
 
 
@@ -71,7 +71,7 @@ export default class Profile extends Component{
 
                 <div class="d-flex flex-column content">
                     <div>
-                    <img src={rosa11} id="imgprofile" alt="Profile picture" />
+                    <img src={profile} id="imgprofile" alt="Profile picture" />
                     </div>
                     <div class="d-flex flex-column">
                         <div class="d-flex justify-content-center">
