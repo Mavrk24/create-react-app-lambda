@@ -30,8 +30,30 @@ export default class Display extends Component{
     
 getRec = () => {
         this.props.history.push('/recommendation');
-        console.log('form is valid: submit');
-    }        
+    }
+getErgo = () => {
+        this.props.history.push('/intervention');
+    }    
+
+callMDP = () => {
+    var int_value = {int_value: parseInt(localStorage.getItem('eCMDQ'))};
+    axios.post("https://euhabit-api.herokuapp.com/mdp", JSON.stringify(int_value), {
+    headers: {
+      'Content-Type': 'application/json',
+      "Access-Control-Allow-Origin": "*"
+    }
+})
+ .then(response => {
+        const response_action = response.data.action;
+        console.log(response_action)
+        if (response_action == 'stretch'){
+           this.getRec();
+        }
+        else{
+        this.getErgo();
+        }
+    });
+}; 
     
 postrequest = () => {
   let payload = {
@@ -62,9 +84,11 @@ postrequest = () => {
             var text = ''
             if (neck.includes(num+1)==true) {
                 text = 'neck'
+                this.getRec();
         }
         if (shoulder.includes(num+1)==true) {
-            text = 'shoulder'
+            text = 'shoulder';
+            this.callMDP();
         }
         let payload = {
             payload: text
@@ -83,10 +107,10 @@ postrequest = () => {
         
           
       localStorage.setItem('target', text);
-       this.getRec();
     });
     };
-  
+    
+    
 
       onRequest = () =>{
         var text = this.state.text;
@@ -131,14 +155,14 @@ postrequest = () => {
       }
       onNo = () =>{
         var array = this.state.arr
-        if (array.length <26){
+        if (array.length <13){
         this.setState({
             arr: this.state.arr.concat(0)
           });
         this.onRequest();
         console.log(this.state.arr);
         }
-        if (array.length >= 25){
+        if (array.length >= 12){
             document.getElementById("save").hidden = false;
         }
       }
