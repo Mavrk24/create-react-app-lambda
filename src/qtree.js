@@ -199,7 +199,7 @@ postrequest = () => {
               </div>
             
             </div>
-            <div class="mt-3 justify-content-center">
+            <div class="mt-3">
               <button class="btn btn-finish" id="save" onClick={this.postrequest.bind(this)} hidden="hidden"> Finish </button>
             </div>
         </div>
