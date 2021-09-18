@@ -2,6 +2,7 @@ import { Form, Button, Container, Col, Row, Modal, FormCheck, FormLabel, ListGro
 import React, {useState} from 'react';
 import { Component } from 'react';
 import './recommendation.css';
+import Navbar from './navbar';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
 /*video*/
@@ -138,12 +139,20 @@ render() {
         return(
             <div>
 
+            <Navbar />
+
             <h1 class="mx-5 pb-3" id="demographic-data">
               Result and Recommendation <br/>
               <p class="mt-2" id="survey"> ผลการประเมินสภาพแวดล้อมในการนั่งทำงาน </p>
             </h1>
+
+            
             {renderVDO()}
-            <Button id="btn-login" onClick={this.getMain}> mainpage </Button>
+
+
+            <p id="Nxtbutton1">
+                <Button id="btn-finish"onClick={this.getMain}><b> mainpage </b></Button>
+            </p>
     
 
 {/* C2 ท่าเงยหน้าขึ้น/ลง stretching_2*/}   
