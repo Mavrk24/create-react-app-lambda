@@ -150,8 +150,8 @@ render() {
             {renderVDO()}
 
 
-            <div id="Nxtbutton1">
-                <Button id="btn-finish" onClick={this.getMain}><b> mainpage </b></Button>
+            <div class="mt-3" id="Nxtbutton1">
+                <Button id="btn-login" onClick={this.getMain}><b> mainpage </b></Button>
             </div>
     
 
