@@ -31,6 +31,7 @@ function Application() {
     history.push('/entry');
     }
     else{
+      console.log(isNew)
     history.push('/mainpage');
     }
   }
