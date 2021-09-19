@@ -39,7 +39,10 @@ async function loginUser(credentials) {
     if (s_res.isError) {
       alert(s_res.type)
     } else {
-      setToken({"token": s_res.token});  
+      setToken({
+        "token": s_res.token,
+        isNew: token.isNew
+      });  
     }
     
    
