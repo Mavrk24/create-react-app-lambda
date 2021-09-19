@@ -23,7 +23,7 @@ import Navbar from './navbar';
 import Display from './qtree';
 import Recommendation from './recommendation';
 function Application() {
-  const isNew = window.localStorage.getItem("token");
+  const isNew = JSON.parse(window.localStorage.getItem("token")).isNew;
   const history = useHistory();
   const onSubmit = async e => {
     e.preventDefault();
