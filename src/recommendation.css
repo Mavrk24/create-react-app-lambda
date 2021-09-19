@@ -72,10 +72,21 @@
 }
 
 /*video*/
-.video_size{
-    width: 30%;
+#video_size{
+    width: 400px;
     margin-top: 30px;
     margin-right: auto;
     margin-left: auto;
     display: block;
+}
+
+@media (max-width: 450px) {
+    #video_size{
+        width: 300px;
+        margin-top: 30px;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+    }
+    
 }

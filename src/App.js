@@ -83,7 +83,7 @@ function App() {
     <Route exact path='/workplace' component={Workplace} />
     <Route exact path='/information' component={Information} />
     <Route exact path='/stretching' component={Stretching} />
-  <Route exact path='/qtree' component={Display} />
+    <Route exact path='/qtree' component={Display} />
       <Route exact path='/recommendation' component={Recommendation} />
     </Switch>
 

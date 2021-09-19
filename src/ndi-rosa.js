@@ -707,7 +707,7 @@ export default class NDI extends Component{
                     </Form.Group>                
                 </Form>
                     <p id="Nxtbutton1">
-                    <Button class="btn" id={0} type="submit" onClick={this.sendform} ><b>Next</b></Button>
+                    <button class="btn btn-login" id={0} type="submit" onClick={this.sendform} ><b>Next</b></button>
                     </p>
 
             </div>

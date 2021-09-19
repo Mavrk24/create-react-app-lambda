@@ -13,7 +13,7 @@ class Navbar extends Component{
 
     handleClick = e => {
         
-       localStorage.removeItem('token');
+        localStorage.removeItem('token');
         e.preventDefault();
         this.props.history.push('/');
         window.location.reload();
@@ -77,7 +77,7 @@ class Navbar extends Component{
                             <a class="nav-link"  onClick={this.getInfo}>Information</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="/" type="submit" onClick={this.handleClick}>Sign Out</a>
+                            <a class="nav-link" onClick={this.handleClick}>Sign Out</a>
                             </li>
                         </ul>
                     </div> 

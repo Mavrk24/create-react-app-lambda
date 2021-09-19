@@ -78,7 +78,7 @@ getErgo = () => {
                             </button>
                         {/* */}
                             <div class="card-body card_text_mainpage">
-                                <a type="submit" onClick={this.getErgo}><p class="card-title textlink"><b> Ergonomics setting </b></p></a>
+                                <p class="card-title textlink" onClick={this.getErgo}><b> Ergonomics setting </b></p>
                             </div>
                         </div>
                     </div>
@@ -93,12 +93,11 @@ getErgo = () => {
                             </button>
                         {/* */}
                             <div class="card-body card_text_mainpage">
-                                <a type="submit" onClick={this.getStretching}><p class="card-title textlink"><b> Stretching </b></p></a>
+                                <p class="card-title textlink" onClick={this.getStretching}><b> Stretching </b></p>
                             </div>
                         </div>
                     </div>
                 </div>
-
 
             </div>
         )

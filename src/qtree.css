@@ -68,7 +68,7 @@
     text-align: left;
 }
 
-#btn-finish{
+.btn-finish{
     color: #ffffff;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -76,6 +76,14 @@
     background-color: #f3921c;
     border: none;
     font-family: Quicksand, Verdana, sans-serif;
+    align-items: center;
+}
+
+#finish_button{
+    align-items: center;
+    position: relative;
+    top: 2%;
+    text-align: center;
 }
 
 
