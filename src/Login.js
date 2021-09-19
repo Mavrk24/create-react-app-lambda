@@ -41,7 +41,7 @@ async function loginUser(credentials) {
     } else {
       setToken({
         "token": s_res.token,
-        isNew: token.isNew
+        "isNew": s_res.isNew
       });  
     }
     
