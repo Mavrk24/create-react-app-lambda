@@ -12,7 +12,7 @@ export default class NDI extends Component{
       memory: '',
       prev: 0,
       tempAns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], //เก็บคำตอบแต่ละข้อ
-      count: 0
+      count: []
     };
   }
   
@@ -23,20 +23,24 @@ export default class NDI extends Component{
 
     calculate=(ele)=>{
       if (ele.target.name!=this.state.memory) {
-        var new_count = this.state.count + 1
+
         this.setState(previousState => ({
           score: parseInt(parseInt(previousState.score) + parseInt(ele.target.id))
         }));
-        console.log("count: ", this.state.count)
         this.setState({
           prev: parseInt(ele.target.id),
-          count: new_count
         });
+        if (!count.includes(ele.target.name)) {
+            count.push(ele.target.name)
+        }
+        console.log("count: ", this.state.count.length)
+
+
       } else {   
         this.setState(previousState => ({
           score: parseInt(parseInt(previousState.score) - (this.state.prev) + parseInt(ele.target.id))
         }));
-        console.log("count: ", this.state.count)
+        console.log("count: ", this.state.count.length)
         this.setState({
             prev: parseInt(ele.target.id)
         });
@@ -54,7 +58,7 @@ export default class NDI extends Component{
 
     sendform=()=>{
 
-        if (this.state.count == 10){
+        if (this.state.count.length == 10){
             var score = this.state.score;
             localStorage.setItem("eCMDQ", Math.floor((score*9)/5));
             fetch('https://euhabit-server.herokuapp.com/api/users/ndi', {
