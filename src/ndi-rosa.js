@@ -617,6 +617,7 @@ export default class NDI extends Component{
                                     id={2}
                                     name="8"
                                     label="การนอนหลับของฉันถูกรบกวนเล็กน้อย (นอนไม่หลับ 1-2 ชั่วโมง)"
+                                    onClick={this.calculate}
                                 />
                                 </div>
                                 <div className="mb-3">
