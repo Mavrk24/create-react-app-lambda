@@ -27,6 +27,7 @@ export default class NDI extends Component{
         this.setState(previousState => ({
           score: parseInt(parseInt(previousState.score) + parseInt(ele.target.id))
         }));
+        console.log("count: ", this.state.count)
         this.setState({
           prev: parseInt(ele.target.id),
           count: new_count
@@ -35,6 +36,7 @@ export default class NDI extends Component{
         this.setState(previousState => ({
           score: parseInt(parseInt(previousState.score) - (this.state.prev) + parseInt(ele.target.id))
         }));
+        console.log("count: ", this.state.count)
         this.setState({
             prev: parseInt(ele.target.id)
         });
