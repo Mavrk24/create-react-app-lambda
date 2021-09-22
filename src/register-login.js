@@ -19,7 +19,6 @@ async function registerUser(credentials) {
   })
   .then(data => data.json())
   .then((res) => {
-    console.log(res)
     alert(res.type[0])
     if (!res.isError) {
       localStorage.removeItem('token');
