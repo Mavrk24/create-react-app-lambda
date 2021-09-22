@@ -60,7 +60,12 @@ export default class NDI extends Component{
 
         if (this.state.count.length == 10){
             var score = this.state.score;
-            localStorage.setItem("eCMDQ", Math.floor((score*9)/5));
+            if (score > 10){
+            localStorage.setItem("eCMDQ", Math.floor((score*81)/25));
+            }
+            else{
+            localStorage.setItem("eCMDQ", Math.floor((10*81)/25));  
+            }  
             fetch('https://euhabit-server.herokuapp.com/api/users/ndi', {
                 method: 'POST',
                 headers: {
