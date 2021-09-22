@@ -76,36 +76,37 @@ postrequest = () => {
           "Access-Control-Allow-Origin": "*"
         }
     })
-        .then(response => {
-            console.log(response.data);
-            const num = response.data.text[0][1];
-            const neck = [1,2,3,7,8]
-            const shoulder = [4,11]
-            var text = ''
-            if (neck.includes(num+1)==true) {
-                text = 'neck'
-                this.getRec();
-        }
-        if (shoulder.includes(num+1)==true) {
-            text = 'shoulder';
-            this.callMDP();
-        }
-        let payload = {
-            payload: text
-        };
-            
-        fetch('https://euhabit-server.herokuapp.com/api/users/RecIntervention', {
-            method: 'POST',
-            headers: {
-                'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
-                token: localStorage.getItem("token"),
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify([payload.payload])
-        })
-           
+    .then(response => {
+      console.log(response.data);
+      const num = response.data.text[0][1];
+      const neck = [1,2,3,7,8]
+      const shoulder = [4,11]
+      var text = ''
+
+      if (neck.includes(num+1)==true) {
+        text = 'neck'
+        this.getRec();
+      }
+
+      if (shoulder.includes(num+1)==true) {
+        text = 'shoulder';
+        this.callMDP();
+      }
         
-          
+      let payload = {
+        payload: text
+      };
+            
+      fetch('https://euhabit-server.herokuapp.com/api/users/RecIntervention', {
+        method: 'POST',
+        headers: {
+          'Access-Control-Allow-Origin': "https://euhabit.netlify.app",
+          token: localStorage.getItem("token"),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify([payload.payload])
+      })
+     
       localStorage.setItem('target', text);
     });
     };
