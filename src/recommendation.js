@@ -65,6 +65,12 @@ export default class Recommendation extends Component{
             var value = arr[num]
            this.setState ({value : value});
         }
+        else{
+            const arr = [3,8]
+            var num = Math.floor(this.state.randnum*2) //สุ่มเลขตั้งแต่สร้างState
+            var value = arr[num]
+           this.setState ({value : value});
+        }    
     }
     
     
