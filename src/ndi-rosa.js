@@ -30,8 +30,8 @@ export default class NDI extends Component{
         this.setState({
           prev: parseInt(ele.target.id),
         });
-        if (!count.includes(ele.target.name)) {
-            count.push(ele.target.name)
+        if (!this.state.count.includes(ele.target.name)) {
+            this.state.count.push(ele.target.name)
         }
         console.log("count: ", this.state.count.length)
 
